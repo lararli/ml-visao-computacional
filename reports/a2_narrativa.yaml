@@ -1,0 +1,200 @@
+# Texto de análise da A2 (escrito depois de olhar as figuras da execução). Os números entram por
+# {{marcador}} e vêm de outputs/<run_id>/a2/ (ver A2Report.values). Rode
+# `python scripts/run_a2.py --report-only` para regenerar reports/sections/a2.md.
+dados: |
+  O ADS-16 (Roffo e Vinciarelli, 2016) vem em duas partes (`ADS16_Benchmark_part1` e `part2`). Dentro
+  de cada uma há `Ads/Ads/<n>/` (os anúncios) e `Corpus/Corpus/U<id>/` (os dados de 120 participantes,
+  inclusive as fotos pessoais deles em `U*-IM-POS` e `U*-IM-NEG`). Três achados mudam o que o PD
+  assumia:
+
+  - **São 20 categorias, não 16.** As pastas `Ads/1` a `Ads/20` seguem a ordem das 20 categorias da
+    Tabela 1 do artigo e do cabeçalho `Cat0..Cat19` do arquivo `U0001-RT.csv`. O mapa está abaixo. Ele se confirma nos resultados: os anúncios de
+    pet food, carro, pandeiro e dating saem das pastas 16, 2, 14 e 20, e a classificação zero-shot do
+    R17 acerta a pasta muito acima do acaso.
+  - **Só há {{n_ads}} anúncios.** São 15 por pasta; a pasta 1 tem 16 (o arquivo a mais é `Ads/1/16.png`).
+    O artigo diz que os anúncios se dividem em três formatos, 100 de cada: de mídia rica, de imagem e
+    de texto. O PD pede "ao menos 500 imagens", então os anúncios sozinhos não bastam.
+  - **O que falta vem das fotos pessoais do corpus.** A amostra tem todos os anúncios, estratificados
+    pela pasta, mais fotos pessoais estratificadas por polaridade. Isso é um desvio consciente: as
+    fotos não são anúncios, e por isso o ranking mostra a frequência separada por origem.
+
+  A licença do ADS-16 permite só uso científico e proíbe publicar as imagens. As figuras deste
+  relatório ficam em `outputs/` (fora do git) e servem só à entrega da disciplina.
+r17_texto: |
+  O CLIP tem dois encoders: um de imagem (aqui, um ViT) e um de texto (um transformer). Os dois
+  terminam em um vetor de 512 números. Eles foram treinados juntos, com cerca de 400 milhões de pares
+  imagem e legenda tirados da internet (aula 06, 00:09:54 a 00:10:36). O pré-treinamento é
+  **contrastivo**: ele não pede ao modelo um rótulo, pede que aproxime o que combina e afaste o que
+  não combina. Em cada lote, o treino calcula o
+  cosseno de todas as imagens com todos os textos e monta uma matriz. A diagonal tem os pares certos.
+  A perda sobe a diagonal e abaixa o resto, nos dois sentidos (imagem para texto e texto para imagem),
+  com uma temperatura aprendida (aula 06, 00:20:21 a 00:24:44).
+
+  **Por que isso permite buscar sem treino supervisionado.** O único jeito de acertar a diagonal para
+  milhões de pares diferentes é descrever, no vetor da imagem, o que a legenda diz. O texto vira o
+  rótulo, em linguagem natural e sem lista fechada de classes. Quando o treino acaba, a imagem de um
+  cachorro e a frase "a photo of a dog" ficam em regiões próximas do mesmo espaço. Usar o modelo vira
+  conta de cosseno: o CLIP tem vocabulário aberto, então qualquer frase nova serve de classificador ou de
+  consulta, sem rótulo e sem novo treino (aula 06, 00:08:22 a 00:09:39 e 00:40:00 a 00:42:44).
+r17_leitura: |
+  **O que as medidas mostram.** Só com o nome da categoria, e sem nenhum exemplo de treino, o CLIP
+  coloca a pasta certa em primeiro lugar em {{zs_top1}} dos {{zs_n}} anúncios, contra {{zs_chance1}}
+  por acaso, e entre as 5 primeiras em {{zs_top5}} (acaso: {{zs_chance5}}). O cosseno com o texto da
+  categoria certa ({{cos_true}}) é maior do que com o das outras ({{cos_other}}). Isso é o alinhamento
+  em ação.
+
+  **O que as medidas mostram sobre o limite.** O alinhamento não cola imagem e texto no mesmo ponto.
+  O cosseno entre uma imagem e um texto fica perto de {{cos_it}}, enquanto entre duas imagens é
+  {{cos_ii}} e entre dois textos é {{cos_tt}}. Os centros das duas nuvens ficam a {{gap}} de distância
+  (o "modality gap"): imagens e textos ocupam regiões diferentes do espaço. Por isso os scores
+  absolutos do CLIP ficam numa faixa estreita e só a ordem dentro de uma consulta é confiável. A
+  acurácia também varia muito por categoria (melhores: {{zs_best}}; piores: {{zs_worst}}). Hipótese,
+  não testada aqui: nomes amplos de categoria descrevem pouco do que a imagem mostra, e muitos
+  anúncios são só texto.
+threshold_texto: |
+  Os cossenos do CLIP ficam em uma faixa estreita: média {{dist_mean}}, mediana {{dist_p50}}, percentil 90
+  em {{dist_p90}}, percentil 95 em {{dist_p95}}, percentil 99 em {{dist_p99}} e máximo {{dist_max}}. Um
+  limiar "redondo" como 0,5 não pegaria nenhum par. Para escolher o valor, sorteei {{thr_n}} pares
+  (imagem, descrição) entre os percentis 75 e 100, mostrei cada um numa folha **sem o score** e
+  marquei a olho se a descrição aparece na imagem ({{thr_n_present}} de {{thr_n}} aparecem). O limiar
+  que mais concorda com essa conferência é {{threshold}}: ele acerta {{thr_accuracy}} dos pares, com
+  precisão {{thr_precision}} e cobertura {{thr_recall}}, e fica perto do percentil 95 da distribuição
+  ({{dist_p95}}). Abaixo dele a precisão cai rápido; acima dele a cobertura cai. A conferência é uma
+  amostra pequena, de um avaliador só, e os pares vêm da faixa alta, então esses percentuais não
+  valem para o corpus inteiro; eles justificam a escolha do corte, só isso.
+ranking_leitura: |
+  **Como ler o ranking.** O primeiro lugar, "{{top1_name}}" ({{top1_freq}} das imagens), não é um objeto: é
+  o formato do anúncio. Ele aparece em {{top1_freq_ad}} dos anúncios e em {{top1_freq_foto}} das fotos
+  pessoais, porque boa parte dos anúncios são só texto, no estilo de resultado de busca (o artigo fala
+  em 100 anúncios de texto entre 300). O segundo, "{{top2_name}}" ({{top2_freq}}), também descreve o
+  formato. Os objetos de verdade começam em "{{top3_name}}" ({{top3_freq}}), "{{top4_name}}"
+  ({{top4_freq}}) e "{{top5_name}}" ({{top5_freq}}).
+
+  **O que a figura confirma.** Na grade, "website screenshot" mostra quatro anúncios de texto
+  (sites de slots, sapatos, download de software), o que confirma a categoria. "text and logo" mostra
+  anúncios com marca grande (Fiat, Burger King, Kaspersky, Raven). "food product" mostra feijão,
+  um banner de ração e dois anúncios de hambúrguer: os quatro mostram comida, um deles de comida de
+  animal.
+  "video game" mostra quatro anúncios de texto sobre jogos, nenhum com a imagem de um jogo: o CLIP lê
+  o texto. "pet animal" é o mais fraco: um cão, um patinho (animal, mas não de estimação) e dois
+  anúncios de texto sobre produtos para pets.
+
+  **O que pode enganar.** Descrições genéricas têm score médio mais alto em qualquer imagem
+  ("{{top1_name}}": {{top1_mean_all}}; "{{last_name}}": {{last_mean_all}}). Um limiar único favorece as
+  genéricas, e por isso "{{last_name}}" fica em {{last_freq}}. A coluna "Top-1" ajuda a conferir: ela
+  conta em quantas imagens a descrição foi a de maior score, sem depender do limiar.
+queries:
+  q01: |
+    Consulta genérica com uma palavra só. Os 5 resultados são comida: peixe grelhado, hambúrgueres e
+    batata frita, pizza, e dois anúncios de texto sobre *pet food*. Funciona mesmo sem frase, mas o
+    CLIP lê as letras na imagem: os dois anúncios entram porque a palavra "food" está escrita neles,
+    embora seja comida de bicho. Scores de {{q01_score1}} a {{q01_score5}}.
+  q02: |
+    Consulta específica. Os dois primeiros acertam a fruta (uma cesta de frutas vermelhas e um
+    smoothie de morango). Do terceiro em diante o resultado vira "comida com legumes": uma sopa, uma
+    lata de lixo com sobras e duas panelas de pratos cozidos. Ficou o conceito geral (comida), e os
+    detalhes "fresh" e "bowl" se perderam. O score cai de {{q02_score1}} para {{q02_score5}}. Anúncios
+    entre os 5 resultados: {{q02_n_ads}}; as fotos pessoais ganham de anúncios de texto em cenas
+    naturais.
+  q03: |
+    Consulta com três atributos (vermelho, esportivo, estrada). Só o primeiro resultado mostra um
+    carro esportivo (um conversível cinza, parado ao ar livre). O segundo é o
+    resultado inesperado: crianças num carrinho vermelho sobre asfalto, sem carro nenhum; o CLIP
+    juntou "vermelho" e "chão de rua". O terceiro é um pandeiro vermelho. Os dois últimos são anúncios
+    de texto de peças de carro: entram pela palavra "car". O modelo mistura os atributos em vez de
+    exigir todos ao mesmo tempo.
+  q04: |
+    Consulta concreta e emocional. Quatro dos cinco são cães (um cão dourado deitado, um atrás de uma
+    cerca, um no veterinário e um magro preso a uma corrente). O inesperado é o segundo:
+    um leitão. O terceiro é um cão magro e triste: nada "cute". O CLIP pegou "puppy" e deixou "cute"
+    quase de lado, e "filhote de animal" aproximou o leitão.
+  q05: |
+    Consulta com uma relação (pessoa usando um celular). Nenhum dos 5 mostra isso. O primeiro é uma
+    imagem preta; o segundo é um anúncio de texto "Smartphone offers" (de novo, a palavra lida); o
+    terceiro é o rosto de um homem, sem celular; o quarto é uma calculadora; o quinto é um homem
+    curvado num bar. O CLIP trata a frase como um saco de conceitos (pessoa, aparelho) e não
+    entende quem faz o quê. Hipótese, não testada: a imagem preta lembra uma tela desligada.
+  q06: |
+    Consulta específica sobre o texto da imagem, e a que melhor funciona: os 5 resultados são
+    anúncios de promoção (descontos em cama, relógios, fornos, móveis de jardim e tinta de impressora),
+    de categorias diferentes ({{q06_cats}}). O CLIP achou a ideia
+    "promoção" e ignorou o produto. Os scores são os maiores de todas as consultas ({{q06_score1}} no
+    primeiro): letra grande e clara na imagem alinha bem com a frase.
+  q07: |
+    Consulta intermediária, de emoção. Quatro dos cinco servem: um anúncio de dating com um casal
+    ao ar livre, um casamento com um beijo, um desenho de dois Pikachus se beijando (romântico, mas
+    desenho) e duas mãos dadas. O inesperado é o quarto: dois gatos deitados num canto, que lembram
+    "um par". A emoção foi captada pela cena (beijo, mãos, casamento).
+  q08: |
+    Consulta composta (bebida gelada em dia quente). Três dos cinco têm uma bebida: três homens
+    sentados ao ar livre bebendo, um smoothie gelado e um anúncio de refrigerante. O primeiro é uma mulher com xícara
+    de chá, de roupa antiga, que não é frio nem verão; o quinto é uma casinha ensolarada com céu
+    azul, sem bebida. O modelo pegou "bebida" e "verão" separadamente e raramente os dois juntos.
+  q09: |
+    Consulta abstrata. Não existe um objeto "felicidade", e os resultados mostram as associações do
+    CLIP: uma mulher posando numa varanda, rosas amarelas com caderno, chocolates, donuts e uma
+    trilha com neve. Doces, flores e sol aparecem em legendas com a palavra "happy". Só o primeiro
+    mostra uma pessoa, e a neve é o resultado mais estranho. O score do primeiro
+    ({{q09_score1}}) é menor do que o das consultas concretas e confiáveis, e nenhum resultado é
+    anúncio ({{q09_n_ads}} de 5).
+  q10: |
+    Consulta abstrata. O carro esportivo (o mesmo conversível da q03) e a piscina de resort com palmeiras
+    combinam com "luxo". Os outros três mostram como o CLIP se agarra a pistas literais: um anúncio
+    de "Luxury Pens" (a palavra está escrita), uma cadeira de escritório de couro e protetores de cinto
+    da Land Rover (a marca). Luxo virou carro caro, viagem, couro e marca.
+queries_resumo: |
+  **Concreto e genérico funciona** (q01, q02, q04, q07): os primeiros resultados são o que a consulta
+  pede, e o que sai errado é o detalhe (fresh, cute, cena). **Relações e combinações falham em parte**
+  (q03, q05, q08): o modelo acha cada conceito, mas não obriga que apareçam juntos nem diz quem faz o
+  quê. **Abstrato devolve associações** (q09, q10): aparecem doces, flores, carro, resort, marcas; é
+  útil como pista cultural, mas não é uma resposta única.
+
+  **O CLIP lê o texto da imagem** (q01 "food", q05 "Smartphone offers", q06 promoções, q10 "Luxury
+  Pens", e q03 "car"): uma palavra escrita no anúncio puxa o resultado, mesmo quando o objeto não está
+  lá. Em anúncios isso é útil (q06) e também gera erro (q05).
+
+  **A origem importa.** Em consultas de cena natural (q02, q04, q07, q09), as fotos pessoais ganham
+  dos anúncios, porque a maioria dos anúncios são só texto. Anúncios entre os 5 resultados: q02 {{q02_n_ads}},
+  q04 {{q04_n_ads}}, q07 {{q07_n_ads}} e q09 {{q09_n_ads}}; na q06, {{q06_n_ads}}. Os scores de consultas diferentes não
+  se comparam entre si; só a ordem dentro de uma consulta importa.
+r20_texto: |
+  **O que é igual e o que é diferente.** Os dois transformam a frase em ids de tokens e depois em
+  vetores. O BERT devolve um vetor por token e usa o do `[CLS]` para representar a frase (aula 03,
+  tags especiais de início e de separação, 00:54:33 a 00:55:51). O encoder de texto do CLIP devolve
+  um vetor só por frase, o da posição do último token (`<|endoftext|>`), e é esse vetor que se compara
+  com o da imagem. Na prática, a consulta "a car" e uma frase longa viram o mesmo tamanho (512
+  números) e podem ser comparadas com qualquer imagem.
+
+  **Tokenização.** O CLIP usa BPE em minúsculas, com `</w>` marcando o fim da palavra, e a
+  frase vai entre `<|startoftext|>` e `<|endoftext|>`; "smartphone" é um token só. O BERT usa WordPiece,
+  com `[CLS]` e `[SEP]` e `##` para as continuações; "smartphone" vira `smart` e `##phone`. Por isso o
+  CLIP gasta {{s3_clip_real}} tokens na terceira frase, e o BERT, {{s3_bert_real}}.
+
+  **Padding.** Para empilhar frases de tamanhos diferentes em uma matriz, as curtas são completadas.
+  No CLIP o contexto tem {{clip_len}} posições: "a car" tem {{s1_clip_real}} tokens reais e
+  {{s1_clip_pad}} de padding. O padding do CLIP usa o mesmo id do `<|endoftext|>`. No BERT, o padding
+  vai só até o maior do lote ({{bert_len}} posições aqui) e usa `[PAD]`: "a car" tem {{s1_bert_real}}
+  reais e {{s1_bert_pad}} de padding.
+
+  **Attention mask.** É um vetor de 1 (token real) e 0 (padding) que diz à atenção para ignorar as
+  posições de enchimento. O experimento acima mostra o efeito. No BERT, a atenção é bidirecional: cada
+  token olha todas as posições, inclusive o `[PAD]`. Com a máscara, o vetor `[CLS]` da frase "{{exp_sentence}}"
+  fica idêntico ao da frase sem padding (cosseno {{bert_cos_mask}}); sem a máscara, cai para
+  {{bert_cos_nomask}}, porque o padding entra na média da atenção. No CLIP, a atenção do encoder de
+  texto é causal (cada token só olha os anteriores, a "máscara de decoder" da aula 03, 00:45:48 a
+  00:46:54) e o vetor é lido no primeiro `<|endoftext|>`; o padding vem depois dele e não consegue
+  influenciar. Com ou sem máscara, o cosseno é {{clip_cos_mask}} e {{clip_cos_nomask}}. Em resumo: no
+  BERT a máscara protege o resultado; no CLIP o desenho causal já protege, e a máscara é uma
+  garantia a mais ao empilhar lotes.
+limites: |
+  - O ranking depende dos 2 templates, das 24 descrições e do limiar; outra escolha dá outro
+    ranking. O limiar vem de {{thr_n}} pares conferidos por uma única conferência a olho, não por vários
+    humanos.
+  - A amostra mistura anúncios e fotos pessoais. As frequências por origem estão no ranking, e as
+    consultas olham só as {{n_sample}} imagens da amostra: "não achou" não quer dizer que não existe no
+    ADS-16.
+  - Não há gabarito de objetos no ADS-16. O único gabarito é a pasta de categoria, usado só no R17.
+  - O CLIP foi treinado sobretudo em inglês (aula 06, 01:52:25 a 01:53:36); as consultas estão em
+    inglês. O modelo não foi ajustado: é só o `openai/clip-vit-base-patch32`.
+  - Os scores só se comparam dentro de uma consulta. A leitura dos resultados (q01 a q10) é
+    qualitativa, feita olhando as grades.

@@ -1,0 +1,408 @@
+{
+  "rater": "conferência a olho, em folhas sem o score; pode ser reavaliada editando este arquivo",
+  "criterion": "present = o objeto ou conceito aparece na imagem; num anúncio só de texto, só se o produto anunciado é da categoria da descrição",
+  "model": "openai/clip-vit-base-patch32",
+  "seed": 42,
+  "pairs": [
+    {
+      "id": 1,
+      "image_path": "Ads/7/5.png",
+      "description": "a video game",
+      "score": 0.2861587405204773,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 2,
+      "image_path": "Ads/1/16.png",
+      "description": "a book, DVD or CD",
+      "score": 0.22811336815357208,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 3,
+      "image_path": "Ads/11/14.png",
+      "description": "clothing or shoes",
+      "score": 0.22277386486530304,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 4,
+      "image_path": "Ads/5/3.png",
+      "description": "a musical instrument",
+      "score": 0.2738189101219177,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 5,
+      "image_path": "Ads/17/15.png",
+      "description": "text and logo",
+      "score": 0.2582840323448181,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 6,
+      "image_path": "Ads/10/11.png",
+      "description": "text and logo",
+      "score": 0.286300390958786,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 7,
+      "image_path": "Ads/6/1.png",
+      "description": "a person",
+      "score": 0.24040718376636505,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 8,
+      "image_path": "Ads/16/1.png",
+      "description": "a pet animal",
+      "score": 0.2837573289871216,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 9,
+      "image_path": "Ads/9/2.png",
+      "description": "outdoor scenery",
+      "score": 0.25438717007637024,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 10,
+      "image_path": "Corpus/U0069/U0069-IM-NEG/2_th_1457199272.png",
+      "description": "a video game",
+      "score": 0.24097499251365662,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 11,
+      "image_path": "Ads/3/15.png",
+      "description": "a person",
+      "score": 0.2457335889339447,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 12,
+      "image_path": "Corpus/U0106/U0106-IM-POS/3_th_1459008396.png",
+      "description": "a person",
+      "score": 0.22388297319412231,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 13,
+      "image_path": "Ads/19/12.png",
+      "description": "casino cards, chips or money",
+      "score": 0.2809056043624878,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 14,
+      "image_path": "Ads/13/4.png",
+      "description": "a website screenshot",
+      "score": 0.2789219319820404,
+      "present": true,
+      "note": "anúncio de texto no formato de resultado de busca: conta como captura de site"
+    },
+    {
+      "id": 15,
+      "image_path": "Corpus/U0069/U0069-IM-NEG/1_th_1457199262.png",
+      "description": "a baby",
+      "score": 0.27963224053382874,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 16,
+      "image_path": "Ads/4/12.png",
+      "description": "cosmetics and beauty products",
+      "score": 0.3108687996864319,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 17,
+      "image_path": "Ads/12/8.png",
+      "description": "casino cards, chips or money",
+      "score": 0.289327472448349,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 18,
+      "image_path": "Ads/12/13.png",
+      "description": "text and logo",
+      "score": 0.22996284067630768,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 19,
+      "image_path": "Ads/18/14.png",
+      "description": "clothing or shoes",
+      "score": 0.28915274143218994,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 20,
+      "image_path": "Ads/14/3.png",
+      "description": "a book, DVD or CD",
+      "score": 0.24458670616149902,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 21,
+      "image_path": "Ads/4/2.png",
+      "description": "food product",
+      "score": 0.25195422768592834,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 22,
+      "image_path": "Ads/19/5.png",
+      "description": "a video game",
+      "score": 0.251405268907547,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 23,
+      "image_path": "Ads/6/10.png",
+      "description": "a video game",
+      "score": 0.23083533346652985,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 24,
+      "image_path": "Ads/20/2.png",
+      "description": "a video game",
+      "score": 0.2499731183052063,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 25,
+      "image_path": "Ads/12/3.png",
+      "description": "a video game",
+      "score": 0.2773268520832062,
+      "present": false,
+      "note": "cassino online, não é videogame: falso"
+    },
+    {
+      "id": 26,
+      "image_path": "Ads/15/2.png",
+      "description": "a website screenshot",
+      "score": 0.2510160505771637,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 27,
+      "image_path": "Ads/17/4.png",
+      "description": "a website screenshot",
+      "score": 0.28818678855895996,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 28,
+      "image_path": "Corpus/U0006/U0006-IM-NEG/4_th_1445387168.png",
+      "description": "a book, DVD or CD",
+      "score": 0.25073158740997314,
+      "present": true,
+      "note": "capa de filme, parece capa de DVD"
+    },
+    {
+      "id": 29,
+      "image_path": "Ads/8/3.png",
+      "description": "food product",
+      "score": 0.2424791306257248,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 30,
+      "image_path": "Corpus/U0051/U0051-IM-NEG/2.png",
+      "description": "food product",
+      "score": 0.23030836880207062,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 31,
+      "image_path": "Ads/2/2.png",
+      "description": "a website screenshot",
+      "score": 0.26855581998825073,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 32,
+      "image_path": "Ads/16/15.png",
+      "description": "food product",
+      "score": 0.2951469421386719,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 33,
+      "image_path": "Ads/3/1.png",
+      "description": "a website screenshot",
+      "score": 0.27143847942352295,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 34,
+      "image_path": "Corpus/U0054/U0054-IM-POS/5.png",
+      "description": "text and logo",
+      "score": 0.2778373956680298,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 35,
+      "image_path": "Ads/1/2.png",
+      "description": "a toy",
+      "score": 0.23792432248592377,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 36,
+      "image_path": "Ads/19/1.png",
+      "description": "casino cards, chips or money",
+      "score": 0.24751324951648712,
+      "present": false,
+      "note": "anúncio de texto sobre jogos de cartas (não é cassino): falso"
+    },
+    {
+      "id": 37,
+      "image_path": "Ads/1/1.png",
+      "description": "clothing or shoes",
+      "score": 0.2892014682292938,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 38,
+      "image_path": "Ads/1/14.png",
+      "description": "clothing or shoes",
+      "score": 0.27491244673728943,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 39,
+      "image_path": "Ads/20/11.png",
+      "description": "a toy",
+      "score": 0.23901820182800293,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 40,
+      "image_path": "Corpus/U0037/U0037-IM-POS/2_th_1446029656.png",
+      "description": "a person",
+      "score": 0.2215624451637268,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 41,
+      "image_path": "Ads/13/6.png",
+      "description": "a website screenshot",
+      "score": 0.25433650612831116,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 42,
+      "image_path": "Ads/3/13.png",
+      "description": "a baby",
+      "score": 0.29157793521881104,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 43,
+      "image_path": "Ads/19/4.png",
+      "description": "a cartoon illustration",
+      "score": 0.24969445168972015,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 44,
+      "image_path": "Corpus/U0078/U0078-IM-NEG/2_th_1457550664.png",
+      "description": "a person",
+      "score": 0.23084178566932678,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 45,
+      "image_path": "Ads/11/3.png",
+      "description": "a kitchen or home interior",
+      "score": 0.2452498823404312,
+      "present": true,
+      "note": "anúncio de texto sobre fornos e fogões: conta como cozinha"
+    },
+    {
+      "id": 46,
+      "image_path": "Ads/11/12.png",
+      "description": "cosmetics and beauty products",
+      "score": 0.2271432876586914,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 47,
+      "image_path": "Corpus/U0011/U0011-IM-NEG/5_th_1445454082.png",
+      "description": "outdoor scenery",
+      "score": 0.2516636550426483,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 48,
+      "image_path": "Corpus/U0090/U0090-IM-POS/1_th_1458238158.png",
+      "description": "a book, DVD or CD",
+      "score": 0.24351993203163147,
+      "present": false,
+      "note": ""
+    },
+    {
+      "id": 49,
+      "image_path": "Corpus/U0111/U0111-IM-POS/4.png",
+      "description": "a baby",
+      "score": 0.27178677916526794,
+      "present": true,
+      "note": ""
+    },
+    {
+      "id": 50,
+      "image_path": "Corpus/U0066/U0066-IM-NEG/4.png",
+      "description": "a person",
+      "score": 0.22646726667881012,
+      "present": true,
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "source": "covid_xray",
+  "classes": [
+    "NORMAL",
+    "PNEUMONIA",
+    "COVID"
+  ],
+  "positive_class": "COVID",
+  "dedup": {
+    "hash_size": 8,
+    "max_distance": 2
+  },
+  "case": {
+    "seed": 42,
+    "test_per_class": 150,
+    "train_counts": {
+      "NORMAL": 840,
+      "PNEUMONIA": 240,
+      "COVID": 120
+    },
+    "val_fraction": 0.2
+  },
+  "gan": {
+    "seed": 42,
+    "image_size": 64,
+    "nz": 100,
+    "ngf": 64,
+    "ndf": 64,
+    "epochs": 150,
+    "batch_size": 64,
+    "lr": 0.0002,
+    "betas": [
+      0.5,
+      0.999
+    ],
+    "sample_every": 10,
+    "fid_every": 10,
+    "fid_n": 960,
+    "runs": {
+      "sem_mitigacao": {
+        "label_smoothing": 1.0,
+        "spectral_norm": false,
+        "replay_size": 0,
+        "replay_prob": 0.0
+      },
+      "com_mitigacao": {
+        "label_smoothing": 0.9,
+        "spectral_norm": true,
+        "replay_size": 512,
+        "replay_prob": 0.5
+      }
+    }
+  },
+  "synthetic": {
+    "n_covid": 600,
+    "seed": 7
+  },
+  "classifier": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "image_size": 224,
+    "epochs": 12,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "pretrained": true,
+    "augment": {
+      "rotation_deg": 10,
+      "scale": 0.1,
+      "translate": 0.05,
+      "brightness": 0.1,
+      "contrast": 0.1
+    }
+  }
+}

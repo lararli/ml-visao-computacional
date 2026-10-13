@@ -1,0 +1,47 @@
+# A4.1: raio-X, GAN condicional e recall da COVID com e sem sintético.
+# Todo número que muda o resultado mora aqui; o código só lê.
+source: covid_xray                       # nome da fonte em configs/data.yaml
+classes: [NORMAL, PNEUMONIA, COVID]      # a posição é o rótulo (COVID = 2)
+positive_class: COVID
+
+dedup:
+  hash_size: 8          # hash perceptual (pHash) de 64 bits
+  max_distance: 2       # Hamming <= 2 = cópia. Com 4, o encadeamento juntou 83 imagens
+                        # diferentes num grupo só; com 2, o maior grupo tem 12 (medido na A4.1)
+
+case:
+  seed: 42
+  test_per_class: 150   # teste real, separado primeiro, nunca visto pela GAN nem pelo classificador
+  train_counts: {NORMAL: 840, PNEUMONIA: 240, COVID: 120}   # o caso do PD
+  val_fraction: 0.2     # estratificado, dentro do caso
+
+gan:
+  seed: 42
+  image_size: 64
+  nz: 100               # tamanho do vetor latente (aula 07, 00:47:21)
+  ngf: 64
+  ndf: 64
+  epochs: 150
+  batch_size: 64
+  lr: 0.0002            # hiperparâmetros do artigo da DCGAN (aula 07, 00:49:54)
+  betas: [0.5, 0.999]
+  sample_every: 10      # grade samples_epoch_*.png
+  fid_every: 10         # FID na curva (ponto final sempre entra)
+  fid_n: 960            # imagens geradas por medida de FID (= tamanho do treino do caso)
+  runs:
+    sem_mitigacao: {label_smoothing: 1.0, spectral_norm: false, replay_size: 0, replay_prob: 0.0}
+    com_mitigacao: {label_smoothing: 0.9, spectral_norm: true, replay_size: 512, replay_prob: 0.5}
+
+synthetic:
+  n_covid: 600          # COVID geradas que entram no treino da condição "com sintético"
+  seed: 7
+
+classifier:
+  seeds: [0, 1, 2]
+  image_size: 224
+  epochs: 12
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.0001
+  pretrained: true      # ResNet-18 do ImageNet
+  augment: {rotation_deg: 10, scale: 0.1, translate: 0.05, brightness: 0.1, contrast: 0.1}

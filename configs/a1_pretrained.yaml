@@ -1,0 +1,24 @@
+# A1: modelos pré-treinados nos mesmos recortes, split, perda, augmentation e métricas do
+# ViT do zero (configs/a1_scratch.yaml). Muda só o modelo e o treino curto: o corpo já sabe ver
+# formas (ImageNet), então poucas épocas com lr baixo bastam, e lr alto apagaria o pré-treino.
+models:
+  vit_pretrained:
+    label: ViT-S/16 pré-treinado (timm vit_small_patch16_224)
+    epochs: 6
+    batch_size: 64
+    lr: 0.00005
+    warmup_epochs: 1
+  resnet18:
+    label: ResNet-18 pré-treinada (torchvision)
+    epochs: 6
+    batch_size: 64
+    lr: 0.0003
+    warmup_epochs: 1
+
+# Regra de "não dá para dizer" (AbstainPolicy), escolhida na validação contra o rótulo do catálogo.
+abstain:
+  min_precision: 0.6    # acima da faixa, o "sim" acerta pelo menos 60%
+  min_npv: 0.95         # abaixo da faixa, o "não" acerta pelo menos 95%
+  min_support: 20       # cada lado da faixa precisa de pelo menos 20 recortes da validação
+  roof_tree_frac: 0.5   # os mesmos limites de árvore (NDVI) de configs/a1.yaml
+  yard_tree_frac: 0.75

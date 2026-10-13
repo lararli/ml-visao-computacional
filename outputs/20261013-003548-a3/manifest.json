@@ -1,0 +1,226 @@
+{
+  "run_id": "20261013-003548-a3",
+  "stage": "a3",
+  "created_at": "2026-10-13T00:35:48+00:00",
+  "git": {
+    "commit": "2c27f5314b0d82f7b417756ea1606d984ed1a0ee",
+    "dirty": true
+  },
+  "sources": [
+    {
+      "name": "images_dataset",
+      "activity": "A3",
+      "kind": "kaggle",
+      "source": "pavansanagapati/images-dataset",
+      "version": 1,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/pavansanagapati/images-dataset?datasetVersionNumber=1",
+      "dest": "raw/images_dataset",
+      "sha256": "b54b28098dc03b74dba1db2592b021f020df30a976876e313e315cb1158ed47d",
+      "n_files": 3606,
+      "n_bytes": 1508381682,
+      "verified": true
+    }
+  ],
+  "counts": {
+    "files_found": 1803,
+    "files_kept": 1764,
+    "files_skipped_unreadable": 0,
+    "files_removed_duplicate": 39,
+    "dirs_ignored": 1,
+    "train": 1236,
+    "val": 264,
+    "test": 264
+  },
+  "config": {
+    "source": "images_dataset",
+    "subdir": "data",
+    "extensions": [
+      ".bmp",
+      ".jpg",
+      ".jpeg",
+      ".png"
+    ],
+    "dedupe": true,
+    "arch": "efficientnet_b0",
+    "weights": "IMAGENET1K_V1",
+    "dropout": 0.2,
+    "resize": 256,
+    "crop": 224,
+    "train_frac": 0.7,
+    "val_frac": 0.15,
+    "seed": 42,
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.001,
+    "optimizer": "adam",
+    "num_workers": 0,
+    "test_frac": 0.15
+  },
+  "device": "mps",
+  "skipped_files": [],
+  "removed_duplicates": [
+    {
+      "path": "bike/bike_199.bmp",
+      "same_as": "bike/bike_163.bmp"
+    },
+    {
+      "path": "horses/horse-117.jpg",
+      "same_as": "horses/horse-116.jpg"
+    },
+    {
+      "path": "horses/horse-139.jpg",
+      "same_as": "horses/horse-138.jpg"
+    },
+    {
+      "path": "horses/horse-141.jpg",
+      "same_as": "horses/horse-131.jpg"
+    },
+    {
+      "path": "horses/horse-148.jpg",
+      "same_as": "horses/horse-147.jpg"
+    },
+    {
+      "path": "horses/horse-153.jpg",
+      "same_as": "horses/horse-152.jpg"
+    },
+    {
+      "path": "horses/horse-156.jpg",
+      "same_as": "horses/horse-155.jpg"
+    },
+    {
+      "path": "horses/horse-173.jpg",
+      "same_as": "horses/horse-172.jpg"
+    },
+    {
+      "path": "horses/horse-178.jpg",
+      "same_as": "horses/horse-177.jpg"
+    },
+    {
+      "path": "horses/horse-188.jpg",
+      "same_as": "horses/horse-187.jpg"
+    },
+    {
+      "path": "horses/horse-199.jpg",
+      "same_as": "horses/horse-198.jpg"
+    },
+    {
+      "path": "horses/horse-26.jpg",
+      "same_as": "horses/horse-191.jpg"
+    },
+    {
+      "path": "horses/horse-27.jpg",
+      "same_as": "horses/horse-158.jpg"
+    },
+    {
+      "path": "horses/horse-39.jpg",
+      "same_as": "horses/horse-38.jpg"
+    },
+    {
+      "path": "horses/horse-42.jpg",
+      "same_as": "horses/horse-110.jpg"
+    },
+    {
+      "path": "horses/horse-52.jpg",
+      "same_as": "horses/horse-51.jpg"
+    },
+    {
+      "path": "horses/horse-79.jpg",
+      "same_as": "horses/horse-112.jpg"
+    },
+    {
+      "path": "horses/horse-84.jpg",
+      "same_as": "horses/horse-176.jpg"
+    },
+    {
+      "path": "horses/horse-9.jpg",
+      "same_as": "horses/horse-10.jpg"
+    },
+    {
+      "path": "horses/horse-92.jpg",
+      "same_as": "horses/horse-91.jpg"
+    },
+    {
+      "path": "human/rider-109.jpg",
+      "same_as": "human/rider-10.jpg"
+    },
+    {
+      "path": "human/rider-127.jpg",
+      "same_as": "human/rider-121.jpg"
+    },
+    {
+      "path": "human/rider-147.jpg",
+      "same_as": "human/rider-136.jpg"
+    },
+    {
+      "path": "human/rider-196.jpg",
+      "same_as": "human/rider-163.jpg"
+    },
+    {
+      "path": "human/rider-202.jpg",
+      "same_as": "human/rider-201.jpg"
+    },
+    {
+      "path": "human/rider-21.jpg",
+      "same_as": "human/rider-104.jpg"
+    },
+    {
+      "path": "human/rider-26.jpg",
+      "same_as": "human/rider-139.jpg"
+    },
+    {
+      "path": "human/rider-27.jpg",
+      "same_as": "human/rider-112.jpg"
+    },
+    {
+      "path": "human/rider-35.jpg",
+      "same_as": "human/rider-154.jpg"
+    },
+    {
+      "path": "human/rider-40.jpg",
+      "same_as": "human/rider-184.jpg"
+    },
+    {
+      "path": "human/rider-49.jpg",
+      "same_as": "human/rider-133.jpg"
+    },
+    {
+      "path": "human/rider-54.jpg",
+      "same_as": "human/rider-148.jpg"
+    },
+    {
+      "path": "human/rider-67.jpg",
+      "same_as": "human/rider-126.jpg"
+    },
+    {
+      "path": "human/rider-7.jpg",
+      "same_as": "human/rider-6.jpg"
+    },
+    {
+      "path": "human/rider-71.jpg",
+      "same_as": "human/rider-151.jpg"
+    },
+    {
+      "path": "human/rider-87.jpg",
+      "same_as": "human/rider-117.jpg"
+    },
+    {
+      "path": "human/rider-89.jpg",
+      "same_as": "human/rider-70.jpg"
+    },
+    {
+      "path": "human/rider-96.jpg",
+      "same_as": "human/rider-113.jpg"
+    },
+    {
+      "path": "human/rider-98.jpg",
+      "same_as": "human/rider-140.jpg"
+    }
+  ],
+  "ignored_dirs": [
+    "data"
+  ],
+  "timings_seconds": {
+    "train": 85.7,
+    "total": 89.7
+  }
+}

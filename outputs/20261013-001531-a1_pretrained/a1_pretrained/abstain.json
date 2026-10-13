@@ -1,0 +1,113 @@
+{
+  "model": "vit_pretrained",
+  "policy": {
+    "bands": {
+      "pool": {
+        "low": 0.3599871,
+        "high": 0.57698786,
+        "threshold": 0.41788655519485474
+      },
+      "solar": {
+        "low": 0.7019147,
+        "high": 0.72017664,
+        "threshold": 0.7019147276878357
+      }
+    },
+    "roof_tree_frac": 0.5,
+    "yard_tree_frac": 0.75,
+    "reason_order": [
+      "sem prédio",
+      "árvore",
+      "não visível de cima",
+      "incerto"
+    ]
+  },
+  "test": {
+    "pool": {
+      "catalog": {
+        "n": 1135,
+        "sim": 166,
+        "não": 567,
+        "não dá": 402,
+        "coverage": 0.6458149779735682,
+        "reasons": {
+          "incerto": 196,
+          "árvore": 206
+        },
+        "yes_precision": 0.3373493975903614,
+        "no_npv": 0.9360568383658969,
+        "yes_n_truth": 166,
+        "no_n_truth": 563
+      },
+      "reviewed": {
+        "n": 1135,
+        "sim": 166,
+        "não": 567,
+        "não dá": 402,
+        "coverage": 0.6458149779735682,
+        "reasons": {
+          "incerto": 196,
+          "árvore": 206
+        },
+        "yes_precision": 0.8837209302325582,
+        "no_npv": 0.8918918918918919,
+        "yes_n_truth": 43,
+        "no_n_truth": 74
+      }
+    },
+    "solar": {
+      "catalog": {
+        "n": 1135,
+        "sim": 111,
+        "não": 971,
+        "não dá": 53,
+        "coverage": 0.9533039647577093,
+        "reasons": {
+          "incerto": 4,
+          "árvore": 49
+        },
+        "yes_precision": 0.4774774774774775,
+        "no_npv": 0.972193614830072,
+        "yes_n_truth": 111,
+        "no_n_truth": 971
+      },
+      "reviewed": {
+        "n": 1135,
+        "sim": 111,
+        "não": 971,
+        "não dá": 53,
+        "coverage": 0.9533039647577093,
+        "reasons": {
+          "incerto": 4,
+          "árvore": 49
+        },
+        "yes_precision": 0.5128205128205128,
+        "no_npv": 0.9925925925925926,
+        "yes_n_truth": 39,
+        "no_n_truth": 135
+      }
+    }
+  },
+  "gold": {
+    "gold.austin_house_attribute": 2270,
+    "gold.austin_house_attribute_evidence": 2270
+  },
+  "gold_tables": {
+    "gold.austin_house_attribute": 2270,
+    "gold.austin_house_attribute_evidence": 2270
+  },
+  "agreement": {
+    "pool": {
+      "concorda": 583,
+      "imagem sem licença": 110,
+      "licença sem imagem": 36,
+      "não dá": 406
+    },
+    "solar": {
+      "concorda": 997,
+      "imagem sem licença": 58,
+      "licença sem imagem": 27,
+      "não dá": 53
+    }
+  }
+}

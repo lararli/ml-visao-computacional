@@ -1,0 +1,61 @@
+{
+  "run_id": "20261012-233015-a1_scratch",
+  "stage": "a1_scratch",
+  "created_at": "2026-10-12T23:30:15+00:00",
+  "git": {
+    "commit": "8bed344a1a5a53066b82708876bff4ab6c7098d8",
+    "dirty": true
+  },
+  "sources": [
+    {
+      "name": "catalog.duckdb",
+      "path": "./data.nosync/catalog.duckdb",
+      "tables": [
+        "silver.chip",
+        "silver.label",
+        "silver.house",
+        "silver.osm_pool"
+      ]
+    }
+  ],
+  "counts": {
+    "recortes": 7884,
+    "train": 5552,
+    "val": 1197,
+    "test": 1135,
+    "conferidos_no_teste": 200
+  },
+  "config": {
+    "attributes": [
+      "pool",
+      "solar"
+    ],
+    "image_size": 96,
+    "pixel_m": 0.6,
+    "patch": 8,
+    "dim": 192,
+    "depth": 6,
+    "heads": 6,
+    "mlp_ratio": 4.0,
+    "dropout": 0.1,
+    "epochs": 75,
+    "batch_size": 128,
+    "lr": 0.0005,
+    "weight_decay": 0.05,
+    "warmup_epochs": 5,
+    "grad_clip": 1.0,
+    "seed": 42,
+    "augment": true,
+    "pos_weight": true,
+    "examples": [
+      "pool",
+      "solar",
+      "erro"
+    ]
+  },
+  "device": "mps",
+  "timings_seconds": {
+    "train": 1686.0,
+    "total": 1694.1
+  }
+}

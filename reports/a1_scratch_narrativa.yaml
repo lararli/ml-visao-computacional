@@ -1,0 +1,92 @@
+# Texto de análise do ViT do zero, escrito depois de olhar os mapas do run. Os números
+# entram por {{marcador}} e vêm de outputs/<run_id>/a1_scratch/metrics.json (ver
+# ScratchReport.values). Rode `python scripts/run_a1_scratch.py --report-only` para regenerar a parte
+# do ViT do zero em reports/sections/a1.md.
+r09_texto: |
+  A atenção compara cada token com todos os outros por produto escalar (Q K^T) e soma os V com esses
+  pesos. Nada nessa conta depende da ordem dos tokens. Se a fila de patches for embaralhada, cada
+  token encontra os mesmos vizinhos, com os mesmos pesos, só que em outro lugar da fila. Sem
+  positional encoding, o encoder é equivariante à permutação: embaralhar a entrada só embaralha as
+  saídas. O CLS olha para todos os patches com pesos que não dependem da ordem, então o logit dele
+  não muda. Numa foto aérea isso é ruim: o modelo não saberia se a mancha azul está no quintal da
+  casa do centro ou na borda, no lote do vizinho, nem se a mancha escura está sobre o telhado.
+
+  Por isso o ViT soma a cada token um vetor de posição aprendido (`pos_embed`, um por lugar da grade
+  de patches, mais um para o CLS). É a posição aprendida do ViT original, e não a fórmula de seno e
+  cosseno do Transformer de 2017 (aula 02, seção 2.7; aula 04, seção 2.7). Com ela, o mesmo patch
+  em lugares diferentes vira tokens diferentes.
+
+  Medido no modelo treinado, com {{perm_n}} recortes do teste e os patches embaralhados na mesma
+  ordem aleatória: com a posição, a probabilidade muda em média {{perm_with_mean}} (no máximo
+  {{perm_with_max}}). Com a posição zerada, o maior desvio do logit é {{perm_without_max}}, que é só
+  arredondamento do float32. O teste `test_permutacao_sem_posicao_so_embaralha_com_posicao_muda`
+  (`tests/test_vit_modules.py`) prova o mesmo num ViT pequeno: sem posição, os tokens de saída saem
+  na ordem permutada e o logit fica igual; com posição, o logit muda.
+
+resultados_texto: |
+  Contra o rótulo automático do catálogo, no teste inteiro, os dois atributos ficam acima do acaso,
+  mas longe de bons: piscina com F1 {{test_pool_f1}} e PR-AUC {{test_pool_pr_auc}} (acaso
+  {{test_pool_prevalence}}); solar com F1 {{test_solar_f1}} e PR-AUC {{test_solar_pr_auc}} (acaso
+  {{test_solar_prevalence}}).
+
+  A amostra conferida mostra que boa parte do "erro" da piscina é erro do rótulo, e não do modelo.
+  A comparação justa usa os mesmos recortes com as duas verdades: contra o catálogo, a piscina tem
+  precision {{revcat_pool_precision}} e F1 {{revcat_pool_f1}}; contra a marcação a olho, precision
+  {{rev_pool_precision}}, recall {{rev_pool_recall}} e F1 {{rev_pool_f1}}. O OSM e as licenças não
+  têm todas as piscinas de Austin: o modelo acha piscinas que o catálogo marca como "não", e o teste
+  automático conta isso como falso positivo. A amostra tem mais positivos que o teste (fração de
+  positivos {{rev_pool_prevalence}} contra {{test_pool_prevalence}}), então os números dela não
+  substituem os do teste inteiro; eles medem o ruído do rótulo.
+
+  O solar é o ponto fraco. Na amostra conferida, o F1 é {{rev_solar_f1}} (precision
+  {{rev_solar_precision}}, recall {{rev_solar_recall}}), igual ao do catálogo nos mesmos recortes
+  ({{revcat_solar_f1}}). Os dois rótulos discordam muito: o catálogo tem {{revcat_solar_n_pos}}
+  positivos nesses recortes e a marcação a olho, {{rev_solar_n_pos}}. Uma licença de solar não
+  garante um painel visível na foto (o painel pode estar sob árvores, na face do telhado que a foto
+  não mostra bem, ou ainda não estar instalado). E o objeto é pequeno: a 0,6 m por pixel, um
+  conjunto de painéis cabe em um ou dois patches de 8 x 8. Os falsos positivos vêm de partes escuras
+  do telhado, como sombra de árvore e claraboia.
+
+  Para o negócio: a piscina do zero já separa bem os casos quando a verdade é boa, e serve como
+  filtro com conferência humana. O solar ainda não serve para decidir nada sozinho. A parte pré-treinada (abaixo) compara
+  com um ViT pré-treinado e com uma CNN, que precisam de menos dados para aprender formas pequenas.
+
+regioes_texto: |
+  O modelo olha para o lugar certo. Em todo o teste, o telhado ocupa {{roof_all_area}} do recorte e
+  recebe {{roof_all_share}} da atenção do CLS (razão {{roof_all_lift}}). Nos recortes em que o modelo
+  diz "solar", a razão sobe para {{roof_pred_solar_lift}} ({{roof_pred_solar_share}} da atenção no
+  telhado): para decidir solar, ele olha para o telhado.
+
+  Na piscina, as cabeças se especializam, que é a ideia da atenção com várias cabeças (aula 04): os
+  polígonos de piscina ocupam só {{pool_all_area}} do recorte e recebem {{pool_all_share}} da
+  atenção. As cabeças 2, 3 e 5 dão à piscina várias dezenas de vezes a atenção que a área explicaria
+  (a maior chega a {{pool_all_best_head_lift}}). As cabeças 1 e 6 ficam perto de 3: elas olham para
+  outras coisas, como o telhado e as sombras. Nos recortes em que o modelo diz "piscina", a média das
+  cabeças sobe de {{pool_all_lift}} para {{pool_pred_pool_lift}}.
+
+  Os três exemplos mostram o mesmo e mostram os limites. No acerto de piscina
+  ({{ex_pool_chip}}, probabilidade {{ex_pool_prob_pool}}), há duas piscinas no recorte: as cabeças 2
+  e 3 acendem as duas, inclusive a do lote vizinho no alto, e as cabeças 4 a 6 olham para a sombra
+  escura ao lado da piscina de baixo. O mesmo recorte recebe solar {{ex_pool_prob_solar}}, mas a
+  marcação a olho diz "não": a cabeça 1 está numa mancha escura do telhado, e esse é o padrão do
+  falso positivo de solar. No acerto de solar ({{ex_solar_chip}}, probabilidade
+  {{ex_solar_prob_solar}}), as cabeças 2 a 6 se juntam no retângulo escuro do telhado, que são os
+  painéis. No erro ({{ex_erro_chip}}, solar {{ex_erro_prob_solar}}), as cabeças 1, 2, 3 e 5 olham
+  para o telhado do vizinho, na borda esquerda, e não para a casa do centro; as cabeças 4 e 6 se
+  espalham pelo telhado e pelas árvores. O modelo olhou para a casa errada.
+
+limites_texto: |
+  - Rótulo com ruído. O treino usa o rótulo automático (polígonos do OSM e licenças de solar). Ele
+    perde piscinas e confunde "tem licença" com "painel visível". A amostra conferida tem só
+    {{n_reviewed}} recortes, escolhidos com mais positivos, e teve uma conferência inicial; a conferência
+    da Lara (`lara.csv`) ainda não entrou nestes números.
+  - O recorte tem vizinhos. Ele tem cerca de 58 m de lado, centrado na casa, e pega o lote ao lado.
+    Uma piscina do vizinho conta como piscina da casa (exemplo de acerto acima). Cortar pelo
+    polígono do lote resolveria isso; ficou fora da POC.
+  - Foto e licença de datas diferentes. A foto do NAIP é de um ano só; uma licença não garante que o
+    painel estava instalado e visível naquela foto.
+  - Um treino, uma seed. O treino no MPS (GPU do Mac) não é idêntico bit a bit entre execuções, e
+    não há intervalo de confiança. Diferenças pequenas contra os pré-treinados não provam nada.
+  - ViT do zero com poucos dados. O ViT não tem o viés de localidade da convolução e precisa de muitos
+    dados para aprender o que uma CNN já assume (aula 04). Os {{params}} parâmetros aprenderam com
+    poucos milhares de recortes; é por isso que a parte pré-treinada usa pesos pré-treinados.

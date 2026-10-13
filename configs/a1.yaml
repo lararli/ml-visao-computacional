@@ -1,0 +1,83 @@
+# A1: casas de Austin com recorte NAIP, lote, endereço e rótulos de piscina e solar.
+# Tudo por código, sem conta. Cada consulta grava a resposta crua em <dados>/raw/a1/<fonte>/<chave>/
+# e um _done.json com a consulta, a data e a contagem; rodar de novo não refaz a consulta.
+#
+# Área: caixa escolhida em 2026-10-12 por uma busca em grade de 0,01 grau (licenças por lote):
+# a caixa inicial do brief (-97.80,30.25,-97.70,30.32) tem 33.679 lotes, 4 vezes a meta de ~8.000
+# casas; esta tem 9.862 lotes, 1.214 lotes com licença de piscina e 484 com licença de solar.
+# Ela cobre parte da caixa inicial (Tarrytown, Bryker Woods, Northwest Hills, Highland Park West).
+area:
+  name: austin_oeste
+  bbox: [-97.82, 30.29, -97.76, 30.35]   # lon_min, lat_min, lon_max, lat_max (WGS84)
+  margin_deg: 0.003                      # folga para endereços, prédios e piscinas na borda
+
+user_agent: "visaocomp-academic/0.1 (Infnet; projeto de pos-graduacao)"
+retries: 5
+backoff_s: 5
+
+sources:
+  naip:
+    stac_url: https://planetarycomputer.microsoft.com/api/stac/v1/search
+    collection: naip
+    year: 2022
+    bands: [red, green, blue, nir]
+  parcels:
+    url: https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/EXTERNAL_tcad_parcel/FeatureServer/0/query
+    fields: [OBJECTID_1, PID_10, PROP_ID, SITUS, ZONING, LAND_VALUE]
+    order_by: OBJECTID_1
+    page_size: 2000
+  addresses:
+    url: https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/LOCATION_address_points/FeatureServer/0/query
+    fields: [OBJECTID, PLACE_ID, ADDRESS, ADDRESS_FRACTION, PREFIX_DIRECTION, FULL_STREET_NAME, ADDRESS_TYPE]
+    order_by: OBJECTID
+    page_size: 2000
+  buildings:
+    release: 2026-09-23.1
+    path: s3://overturemaps-us-west-2/release/2026-09-23.1/theme=buildings/type=building/*.parquet
+    region: us-west-2
+  osm_pools:
+    urls:                    # o principal primeiro; o espelho quando ele devolve 504/406
+      - https://overpass-api.de/api/interpreter
+      - https://maps.mail.ru/osm/tools/overpass/api/interpreter
+    date: "2026-10-01T00:00:00Z"
+    timeout_s: 180
+  permits:
+    url: https://data.austintexas.gov/resource/3syk-w9eu.json
+    page_size: 5000
+    issued_before: "2022-01-01"
+    permit_class: Residential
+    fields: [permit_number, permittype, original_address1, latitude, longitude, tcad_id, issue_date, description]
+
+# Regras de palavra na descrição da licença (maiúsculas). "POOL DECK" conta como piscina.
+trades:
+  pool:
+    include: '\bPOOLS?\b'
+    exclude: '\b(DEMO|DEMOLISH|DEMOLITION|REMOVE|REMOVAL|FILL[- ]?IN|ABANDON)'
+  solar:
+    include: '\bSOLAR\b|PHOTOVOLTAIC|\bPV\b'
+    exclude: 'SOLAR SCREEN|SOLARIUM|SOLAR FILM|SOLAR TUBE'
+
+house:
+  min_area_m2: 40          # abaixo disso é galpão ou abrigo
+  max_area_m2: 1500        # acima disso é escola, igreja ou comércio
+  max_addresses: 4         # lote com mais pontos de endereço é multifamiliar
+  address_type: 1          # ADDRESS_TYPE = 1 (Address); exclui hidrante, semáforo etc.
+
+chip:
+  size_px: 96              # 96 x 96 px a 0,6 m = ~58 m
+  max_nodata_frac: 0.01    # recorte com mais de 1% de pixel vazio tenta outra quadrícula
+
+ndvi:
+  veg_threshold: 0.3       # pixel com NDVI acima disso é vegetação
+  roof_tree_frac: 0.5      # solar: árvore cobre mais de 50% do telhado -> vazio, motivo "arvore"
+  yard_tree_frac: 0.75     # piscina: árvore cobre mais de 75% do quintal no recorte -> vazio
+
+split:
+  cell_m: 1000
+  fractions: {train: 0.70, val: 0.15, test: 0.15}
+  seed: 42
+
+review:
+  n: 200
+  seed: 42
+  quotas: {pool_pos: 60, solar_pos: 50, empty: 20, neg: 70}

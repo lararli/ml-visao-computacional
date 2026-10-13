@@ -1,0 +1,57 @@
+# A2: CLIP no ADS-16. Nada aqui treina modelo.
+model: openai/clip-vit-base-patch32     # Hugging Face; 512 dimensões, texto com 77 posições
+batch_size: 32                          # moderado: a GPU (MPS) é dividida com outros treinos
+seed: 42
+sample_size: 600                        # PD 2.1: "ao menos 500 imagens"
+embedding_table: silver.ads16_embedding
+top_k: 5                                # PD 2.2: top-5 por consulta
+examples_per_object: 4                  # PD 2.1: exemplos confirmando cada um dos 5 mais frequentes
+n_threshold_check: 50                   # pares conferidos a olho para justificar o limiar
+# Limiar de presença (cosseno). null = calculado pela distribuição na etapa "calibrate"
+# e lido do arquivo de conferência manual (configs/a2_threshold_check.json).
+threshold_check_file: configs/a2_threshold_check.json
+templates:                              # prompt ensembling (aula 06, 2.9): média dos vetores
+  - "a photo of {}"
+  - "an advertisement showing {}"
+descriptions:                           # 24 objetos e conceitos; as 5 primeiras são as do PD
+  - a car
+  - a person
+  - food product
+  - outdoor scenery
+  - text and logo
+  - a baby
+  - a pet animal
+  - clothing or shoes
+  - jewelry or a watch
+  - a smartphone or computer
+  - a musical instrument
+  - a video game
+  - tools and hardware
+  - a kitchen or home interior
+  - sports equipment
+  - a toy
+  - a bottle of drink
+  - cosmetics and beauty products
+  - a website screenshot
+  - a cartoon illustration
+  - casino cards, chips or money
+  - a woman
+  - a man
+  - a book, DVD or CD
+queries:                                # do genérico ao específico, do concreto ao abstrato
+  - {id: q01, text: "food", nivel: "genérico, concreto"}
+  - {id: q02, text: "a bowl of fresh fruit and vegetables", nivel: "específico, concreto"}
+  - {id: q03, text: "a red sports car on a road", nivel: "específico, concreto"}
+  - {id: q04, text: "a cute puppy", nivel: "específico, concreto"}
+  - {id: q05, text: "a person using a smartphone", nivel: "específico, relação entre objetos"}
+  - {id: q06, text: "a big discount sale offer", nivel: "específico, texto na imagem"}
+  - {id: q07, text: "a romantic couple", nivel: "intermediário, emoção"}
+  - {id: q08, text: "a cold drink on a hot summer day", nivel: "específico, cena e sensação"}
+  - {id: q09, text: "happiness", nivel: "abstrato"}
+  - {id: q10, text: "luxury", nivel: "abstrato"}
+tokenizer_demo:                         # R20: as mesmas frases nos dois tokenizadores
+  bert_model: bert-base-cased           # o mesmo da aula 03
+  sentences:
+    - "a car"
+    - "a red sports car on a road"
+    - "a person using a smartphone at the beach while drinking a cold drink"

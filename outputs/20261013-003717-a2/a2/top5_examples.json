@@ -1,0 +1,112 @@
+{
+  "a website screenshot": [
+    {
+      "image_path": "Ads/12/2.png",
+      "score": 0.3038405478000641,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/1/2.png",
+      "score": 0.30342820286750793,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/17/1.png",
+      "score": 0.3026445806026459,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/12/5.png",
+      "score": 0.30239051580429077,
+      "source": "ad"
+    }
+  ],
+  "text and logo": [
+    {
+      "image_path": "Ads/2/11.png",
+      "score": 0.29030877351760864,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/10/11.png",
+      "score": 0.286300390958786,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/17/11.png",
+      "score": 0.282463401556015,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/2/12.png",
+      "score": 0.281362384557724,
+      "source": "ad"
+    }
+  ],
+  "food product": [
+    {
+      "image_path": "Corpus/U0086/U0086-IM-NEG/2.png",
+      "score": 0.2955341339111328,
+      "source": "pessoal"
+    },
+    {
+      "image_path": "Ads/16/15.png",
+      "score": 0.2951469421386719,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/10/15.png",
+      "score": 0.28631117939949036,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/10/11.png",
+      "score": 0.28213855624198914,
+      "source": "ad"
+    }
+  ],
+  "a video game": [
+    {
+      "image_path": "Ads/17/3.png",
+      "score": 0.2987738251686096,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/7/2.png",
+      "score": 0.29584503173828125,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/19/1.png",
+      "score": 0.2929759919643402,
+      "source": "ad"
+    },
+    {
+      "image_path": "Ads/7/4.png",
+      "score": 0.28875234723091125,
+      "source": "ad"
+    }
+  ],
+  "a pet animal": [
+    {
+      "image_path": "Ads/16/1.png",
+      "score": 0.2837573289871216,
+      "source": "ad"
+    },
+    {
+      "image_path": "Corpus/U0025/U0025-IM-POS/5_th_1445708167.png",
+      "score": 0.2830660343170166,
+      "source": "pessoal"
+    },
+    {
+      "image_path": "Ads/16/3.png",
+      "score": 0.2798754572868347,
+      "source": "ad"
+    },
+    {
+      "image_path": "Corpus/U0079/U0079-IM-NEG/3.png",
+      "score": 0.27841779589653015,
+      "source": "pessoal"
+    }
+  ]
+}

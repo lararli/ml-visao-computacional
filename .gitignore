@@ -1,0 +1,21 @@
+.venv.nosync/
+.venv
+data.nosync/
+mlruns.nosync/
+outputs/**/*.pt
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.DS_Store
+* 2.*
+* 2/
+reports/pdf/
+# ADS-16: licença só de uso científico, as imagens não podem ser publicadas
+outputs/*-a2/a2/top5.png
+outputs/*-a2/a2/queries/
+outputs/calibracao/*.png

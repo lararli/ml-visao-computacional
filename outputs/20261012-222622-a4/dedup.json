@@ -1,0 +1,25 @@
+{
+  "n_in": 5228,
+  "n_out": 4130,
+  "copias_removidas": 1092,
+  "grupos_com_copias": 487,
+  "grupos_com_rotulos_diferentes": 3,
+  "removidas_por_conflito_de_rotulo": 6,
+  "removidas_por_classe": {
+    "NORMAL": 383,
+    "PNEUMONIA": 117,
+    "COVID": 598
+  },
+  "hash_size": 8,
+  "max_distance": 2,
+  "por_classe_antes": {
+    "NORMAL": 1802,
+    "PNEUMONIA": 1800,
+    "COVID": 1626
+  },
+  "por_classe_depois": {
+    "NORMAL": 1419,
+    "PNEUMONIA": 1683,
+    "COVID": 1028
+  }
+}

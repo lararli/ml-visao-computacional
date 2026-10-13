@@ -1,0 +1,37 @@
+# A1: ViT do zero nos recortes de Austin. Duas saídas: piscina (pool) e solar.
+# Os dados vêm do catalog.duckdb (montagem dos dados da A1) (silver.chip, silver.label, silver.house, silver.osm_pool),
+# aberto só para leitura. O split é o da montagem dos dados (células de 1 km).
+attributes: [pool, solar]
+
+image:
+  size: 96            # recorte 96 x 96 px do NAIP
+  pixel_m: 0.6        # NAIP 2022 no Texas: 0,6 m por pixel (para pôr o telhado e a piscina no recorte)
+
+model:                # decidido no brief: patch 8 -> 144 tokens + CLS; dimensão 192, 6 blocos, 6 cabeças
+  patch: 8
+  dim: 192
+  depth: 6
+  heads: 6
+  mlp_ratio: 4
+  dropout: 0.1
+
+train:
+  # Orçamento: cerca de 40 min de GPU (Apple M5, MPS). Medido: de 15 s (passo isolado) a 32 s
+  # (primeira época, com validação) por época, lote 128; 75 épocas ficam entre 20 e 40 min.
+  epochs: 75
+  batch_size: 128
+  lr: 0.0005
+  weight_decay: 0.05
+  warmup_epochs: 5     # lr sobe linear nas primeiras épocas, depois cai em cosseno
+  grad_clip: 1.0
+  seed: 42
+  augment: true        # foto aérea não tem "cima": giros de 90 graus, espelhos e brilho leve
+  pos_weight: true     # BCE com peso nos positivos = negativos / positivos do treino, por atributo
+
+eval:
+  select_by: val_pr_auc_mean   # melhor época = maior PR-AUC médio (piscina e solar) na validação
+  threshold: val_f1            # limiar por atributo que maximiza o F1 na validação
+
+attention:
+  layer: -1            # última camada
+  examples: [pool, solar, erro]

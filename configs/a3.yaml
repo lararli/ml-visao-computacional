@@ -1,0 +1,27 @@
+# A3: CNN pré-treinada com o corpo congelado.
+# Tudo o que muda o resultado fica aqui; o código só lê.
+source: images_dataset      # nome da fonte em configs/data.yaml
+subdir: data                # pasta com uma subpasta por classe, dentro da fonte
+extensions: [.bmp, .jpg, .jpeg, .png]
+dedupe: true                # tira arquivos idênticos (mesmo sha256) antes do split
+
+model:
+  arch: efficientnet_b0
+  weights: IMAGENET1K_V1    # null = sem pesos (só nos testes)
+  dropout: 0.2
+
+image:
+  resize: 256               # lado menor; é o que a transformação do modelo pede
+  crop: 224
+
+split:                      # estratificado por classe; o teste é usado uma vez
+  train: 0.70
+  val: 0.15
+  seed: 42
+
+train:                      # um treino (PD, item 3.1)
+  epochs: 10
+  batch_size: 32
+  lr: 1.0e-3
+  optimizer: adam
+  num_workers: 0            # 0 é mais rápido aqui: com workers persistentes, o encerramento custou 40 s

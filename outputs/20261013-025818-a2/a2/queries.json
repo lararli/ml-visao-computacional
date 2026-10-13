@@ -1,0 +1,422 @@
+[
+  {
+    "id": "q01",
+    "text": "food",
+    "nivel": "genérico, concreto",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0095/U0095-IM-NEG/3_th_1458257797.png",
+        "score": 0.261691689491272,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Ads/16/1.png",
+        "score": 0.2613174617290497,
+        "source": "ad",
+        "category": "Pet Supplies"
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0089/U0089-IM-NEG/5_th_1458228976.png",
+        "score": 0.2584160566329956,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Ads/16/2.png",
+        "score": 0.25659459829330444,
+        "source": "ad",
+        "category": "Pet Supplies"
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0002/U0002-IM-NEG/2_th_1445286420.png",
+        "score": 0.2535671591758728,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "text": "a bowl of fresh fruit and vegetables",
+    "nivel": "específico, concreto",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0110/U0110-IM-POS/4.png",
+        "score": 0.2701679468154907,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0106/U0106-IM-POS/4.png",
+        "score": 0.2524309456348419,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0057/U0057-IM-NEG/4_th_1457118529.png",
+        "score": 0.23827995359897614,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Corpus/U0083/U0083-IM-NEG/3.png",
+        "score": 0.2375464290380478,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0021/U0021-IM-POS/3.png",
+        "score": 0.23303832113742828,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "text": "a red sports car on a road",
+    "nivel": "específico, concreto",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0006/U0006-IM-POS/4_th_1445386299.png",
+        "score": 0.24577003717422485,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0110/U0110-IM-POS/1.png",
+        "score": 0.23614296317100525,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Ads/14/9.png",
+        "score": 0.22829294204711914,
+        "source": "ad",
+        "category": "Musical Instruments"
+      },
+      {
+        "rank": 4,
+        "image_path": "Ads/2/3.png",
+        "score": 0.21899481117725372,
+        "source": "ad",
+        "category": "Automotive"
+      },
+      {
+        "rank": 5,
+        "image_path": "Ads/2/4.png",
+        "score": 0.21694651246070862,
+        "source": "ad",
+        "category": "Automotive"
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "text": "a cute puppy",
+    "nivel": "específico, concreto",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0030/U0030-IM-POS/1_th_1446029889.png",
+        "score": 0.2635776400566101,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0093/U0093-IM-POS/2.png",
+        "score": 0.2544277012348175,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0079/U0079-IM-NEG/3.png",
+        "score": 0.24034500122070312,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Corpus/U0086/U0086-IM-NEG/3.png",
+        "score": 0.24015870690345764,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0117/U0117-IM-NEG/2_th_1459137403.png",
+        "score": 0.23839807510375977,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "text": "a person using a smartphone",
+    "nivel": "específico, relação entre objetos",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0054/U0054-IM-POS/5.png",
+        "score": 0.256584107875824,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Ads/6/4.png",
+        "score": 0.254740834236145,
+        "source": "ad",
+        "category": "Consumer Electronics"
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0069/U0069-IM-NEG/2_th_1457199272.png",
+        "score": 0.25465771555900574,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Corpus/U0013/U0013-IM-POS/1.png",
+        "score": 0.25423458218574524,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0120/U0120-IM-NEG/3.png",
+        "score": 0.24294322729110718,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "text": "a big discount sale offer",
+    "nivel": "específico, texto na imagem",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Ads/11/14.png",
+        "score": 0.2898644804954529,
+        "source": "ad",
+        "category": "Kitchen & Home"
+      },
+      {
+        "rank": 2,
+        "image_path": "Ads/13/12.png",
+        "score": 0.2878009080886841,
+        "source": "ad",
+        "category": "Jewellery & Watches"
+      },
+      {
+        "rank": 3,
+        "image_path": "Ads/11/3.png",
+        "score": 0.28442394733428955,
+        "source": "ad",
+        "category": "Kitchen & Home"
+      },
+      {
+        "rank": 4,
+        "image_path": "Ads/9/14.png",
+        "score": 0.28347358107566833,
+        "source": "ad",
+        "category": "Garden & Outdoor living"
+      },
+      {
+        "rank": 5,
+        "image_path": "Ads/15/2.png",
+        "score": 0.2833135724067688,
+        "source": "ad",
+        "category": "Office Products"
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "text": "a romantic couple",
+    "nivel": "intermediário, emoção",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Ads/20/9.png",
+        "score": 0.26189348101615906,
+        "source": "ad",
+        "category": "Dating Sites"
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0115/U0115-IM-POS/5_th_1459065879.png",
+        "score": 0.24129128456115723,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0116/U0116-IM-POS/3_th_1459067264.png",
+        "score": 0.23929083347320557,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Corpus/U0090/U0090-IM-POS/4_th_1458238283.png",
+        "score": 0.23648680746555328,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0062/U0062-IM-POS/1_th_1457140827.png",
+        "score": 0.2340315580368042,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "text": "a cold drink on a hot summer day",
+    "nivel": "específico, cena e sensação",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0057/U0057-IM-POS/5_th_1457118277.png",
+        "score": 0.24391008913516998,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0012/U0012-IM-NEG/1.png",
+        "score": 0.24063152074813843,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0106/U0106-IM-POS/4.png",
+        "score": 0.2281692773103714,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Ads/10/14.png",
+        "score": 0.22718366980552673,
+        "source": "ad",
+        "category": "Grocery"
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0071/U0071-IM-POS/4.png",
+        "score": 0.225123792886734,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "text": "happiness",
+    "nivel": "abstrato",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0101/U0101-IM-POS/1_th_1458481455.png",
+        "score": 0.24666465818881989,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Corpus/U0036/U0036-IM-POS/2_th_1446029765.png",
+        "score": 0.24508075416088104,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 3,
+        "image_path": "Corpus/U0012/U0012-IM-POS/3_th_1445459167.png",
+        "score": 0.24144920706748962,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 4,
+        "image_path": "Corpus/U0095/U0095-IM-NEG/1_th_1458257779.png",
+        "score": 0.2354135364294052,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0017/U0017-IM-POS/5_th_1445483646.png",
+        "score": 0.2336033284664154,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "luxury",
+    "nivel": "abstrato",
+    "results": [
+      {
+        "rank": 1,
+        "image_path": "Corpus/U0006/U0006-IM-POS/4_th_1445386299.png",
+        "score": 0.2555696964263916,
+        "source": "pessoal",
+        "category": ""
+      },
+      {
+        "rank": 2,
+        "image_path": "Ads/15/8.png",
+        "score": 0.2510703504085541,
+        "source": "ad",
+        "category": "Office Products"
+      },
+      {
+        "rank": 3,
+        "image_path": "Ads/15/3.png",
+        "score": 0.24720990657806396,
+        "source": "ad",
+        "category": "Office Products"
+      },
+      {
+        "rank": 4,
+        "image_path": "Ads/2/10.png",
+        "score": 0.23944231867790222,
+        "source": "ad",
+        "category": "Automotive"
+      },
+      {
+        "rank": 5,
+        "image_path": "Corpus/U0009/U0009-IM-POS/4.png",
+        "score": 0.23809577524662018,
+        "source": "pessoal",
+        "category": ""
+      }
+    ]
+  }
+]

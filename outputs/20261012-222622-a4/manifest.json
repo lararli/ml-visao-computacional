@@ -1,0 +1,75 @@
+{
+  "run_id": "20261012-222622-a4",
+  "stage": "a4",
+  "created_at": "2026-10-12T22:26:22+00:00",
+  "git": {
+    "commit": "1570d3038c94dda2998d21c6da20fe5cd84d870d",
+    "dirty": true
+  },
+  "sources": [
+    {
+      "name": "covid_xray",
+      "source": "sachinkumar413/covid-pneumonia-normal-chest-xray-images",
+      "version": 1,
+      "sha256": "8e6839f126d999c3e4e9cc57f72cba857f098aa495f318c6aa77e5a0722e7a5b",
+      "n_files": 5228
+    }
+  ],
+  "counts": {
+    "dedup": {
+      "n_in": 5228,
+      "n_out": 4130,
+      "copias_removidas": 1092,
+      "grupos_com_copias": 487,
+      "grupos_com_rotulos_diferentes": 3,
+      "removidas_por_conflito_de_rotulo": 6,
+      "removidas_por_classe": {
+        "NORMAL": 383,
+        "PNEUMONIA": 117,
+        "COVID": 598
+      },
+      "hash_size": 8,
+      "max_distance": 2,
+      "por_classe_antes": {
+        "NORMAL": 1802,
+        "PNEUMONIA": 1800,
+        "COVID": 1626
+      },
+      "por_classe_depois": {
+        "NORMAL": 1419,
+        "PNEUMONIA": 1683,
+        "COVID": 1028
+      }
+    },
+    "caso": {
+      "train": {
+        "NORMAL": 672,
+        "PNEUMONIA": 192,
+        "COVID": 96
+      },
+      "val": {
+        "NORMAL": 168,
+        "PNEUMONIA": 48,
+        "COVID": 24
+      },
+      "test": {
+        "NORMAL": 150,
+        "PNEUMONIA": 150,
+        "COVID": 150
+      }
+    },
+    "sintetico_covid": 600
+  },
+  "config_sha256": "7474a6c9990cff7656767bbf385f61c24f25d88f108ea5d4b55d16b5dc456fc5",
+  "device": "mps",
+  "durations_s": {
+    "caso": 0.2,
+    "gan_sem_mitigacao": 630.3,
+    "gan_com_mitigacao": 662.0,
+    "sintetico": 0.4,
+    "classificador": 541.6,
+    "total": 1858.9
+  },
+  "gan_escolhida": "com_mitigacao",
+  "status": "completo"
+}

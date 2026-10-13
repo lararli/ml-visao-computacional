@@ -1,0 +1,315 @@
+{
+  "run_id": "20261012-224739-a1_data",
+  "stage": "a1_data",
+  "created_at": "2026-10-12T22:47:39+00:00",
+  "git": {
+    "commit": "1570d3038c94dda2998d21c6da20fe5cd84d870d",
+    "dirty": true
+  },
+  "sources": [
+    {
+      "name": "naip",
+      "activity": "A1",
+      "kind": "stac",
+      "query": {
+        "url": "https://planetarycomputer.microsoft.com/api/stac/v1/search",
+        "body": {
+          "collections": [
+            "naip"
+          ],
+          "bbox": [
+            -97.823,
+            30.287,
+            -97.757,
+            30.353
+          ],
+          "datetime": "2022-01-01/2022-12-31",
+          "limit": 100
+        }
+      },
+      "key": "f7c99457a9d5",
+      "fetched_at": "2026-10-12T22:26:51+00:00",
+      "n_records": 4,
+      "sha256": "dc61738371656ca9d15448f7caa6fe87523927bb93afb511baf2b7ace729499e",
+      "n_files": 5,
+      "n_bytes": 543400837,
+      "verified": true
+    },
+    {
+      "name": "parcels",
+      "activity": "A1",
+      "kind": "arcgis",
+      "query": {
+        "url": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/EXTERNAL_tcad_parcel/FeatureServer/0/query",
+        "params": {
+          "where": "1=1",
+          "geometry": "-97.82,30.29,-97.76,30.35",
+          "geometryType": "esriGeometryEnvelope",
+          "inSR": 4326,
+          "spatialRel": "esriSpatialRelIntersects",
+          "outFields": "OBJECTID_1,PID_10,PROP_ID,SITUS,ZONING,LAND_VALUE",
+          "outSR": 4326,
+          "orderByFields": "OBJECTID_1",
+          "resultOffset": "<paginado>",
+          "resultRecordCount": 2000,
+          "f": "geojson"
+        }
+      },
+      "key": "5917e4c6a654",
+      "fetched_at": "2026-10-12T22:18:32+00:00",
+      "n_records": 8801,
+      "sha256": "d09c47708d1530509f503dac997d7ce78f54cdb7dd6393eff48eaa10e576e3da",
+      "n_files": 5,
+      "n_bytes": 8304222,
+      "verified": true
+    },
+    {
+      "name": "addresses",
+      "activity": "A1",
+      "kind": "arcgis",
+      "query": {
+        "url": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/LOCATION_address_points/FeatureServer/0/query",
+        "params": {
+          "where": "1=1",
+          "geometry": "-97.823,30.287,-97.757,30.353",
+          "geometryType": "esriGeometryEnvelope",
+          "inSR": 4326,
+          "spatialRel": "esriSpatialRelIntersects",
+          "outFields": "OBJECTID,PLACE_ID,ADDRESS,ADDRESS_FRACTION,PREFIX_DIRECTION,FULL_STREET_NAME,ADDRESS_TYPE",
+          "outSR": 4326,
+          "orderByFields": "OBJECTID",
+          "resultOffset": "<paginado>",
+          "resultRecordCount": 2000,
+          "f": "geojson"
+        }
+      },
+      "key": "a8327b5376e5",
+      "fetched_at": "2026-10-12T22:18:35+00:00",
+      "n_records": 11878,
+      "sha256": "54c8789434430e61cffdaaeb2a898c71558afd2f924567642374e8b6aa7e768d",
+      "n_files": 6,
+      "n_bytes": 3320750,
+      "verified": true
+    },
+    {
+      "name": "buildings",
+      "activity": "A1",
+      "kind": "overture",
+      "query": {
+        "release": "2026-09-23.1",
+        "path": "s3://overturemaps-us-west-2/release/2026-09-23.1/theme=buildings/type=building/*.parquet",
+        "bbox": [
+          -97.823,
+          30.287,
+          -97.757,
+          30.353
+        ]
+      },
+      "key": "8da4fb73cadc",
+      "fetched_at": "2026-10-12T22:21:12+00:00",
+      "n_records": 13371,
+      "sha256": "f182b2ce01d1c3e83dd3b72426c5a3b1a0ccc47d1e6c6ba9daf92a2bcc4955af",
+      "n_files": 1,
+      "n_bytes": 2969623,
+      "verified": true
+    },
+    {
+      "name": "osm_pools",
+      "activity": "A1",
+      "kind": "overpass",
+      "query": {
+        "service": "overpass",
+        "data": "[out:json][timeout:180][date:\"2026-10-01T00:00:00Z\"];(way[\"leisure\"=\"swimming_pool\"](30.287,-97.823,30.353,-97.757);relation[\"leisure\"=\"swimming_pool\"](30.287,-97.823,30.353,-97.757););out geom;"
+      },
+      "key": "db57ced5b16e",
+      "fetched_at": "2026-10-12T22:26:17+00:00",
+      "n_records": 471,
+      "sha256": "090731a8fc100377ca9d0a51e0b55d04b933d2ecad52432207e3a54093f40381",
+      "n_files": 2,
+      "n_bytes": 478449,
+      "verified": true
+    },
+    {
+      "name": "permits",
+      "activity": "A1",
+      "kind": "socrata",
+      "query": {
+        "url": "https://data.austintexas.gov/resource/3syk-w9eu.json",
+        "params": {
+          "$select": "permit_number,permittype,original_address1,latitude,longitude,tcad_id,issue_date,description",
+          "$where": "(upper(description) like '%POOL%' OR upper(description) like '%SOLAR%' OR upper(description) like '%PHOTOVOLTAIC%' OR upper(description) like '% PV %') AND permit_class_mapped='Residential' AND issue_date < '2022-01-01' AND tcad_id IS NOT NULL AND latitude between 30.287 and 30.353 AND longitude between -97.823 and -97.757",
+          "$order": "permit_number",
+          "$limit": 5000,
+          "$offset": "<paginado>"
+        }
+      },
+      "key": "c0a9d9d96e9a",
+      "fetched_at": "2026-10-12T22:18:38+00:00",
+      "n_records": 5090,
+      "sha256": "9c5d68828474e3386557ca57624f2892fe6e5d44dc7d71ad62e943cbc98dbd8a",
+      "n_files": 2,
+      "n_bytes": 1565033,
+      "verified": true
+    }
+  ],
+  "counts": {
+    "consultas_feitas_agora": 0,
+    "lotes_fonte": {
+      "feicoes": 8801,
+      "sem_pid": 0,
+      "pid_repetido": 1,
+      "lotes": 8799
+    },
+    "enderecos": {
+      "pontos": 11878,
+      "tipo_endereco": 11197,
+      "sem_lote": 1956,
+      "com_lote": 9241
+    },
+    "predios": {
+      "predios": 13371,
+      "sem_lote": 1741
+    },
+    "lotes": {
+      "lotes": 8799,
+      "sem_predio": 722,
+      "sem_endereco": 88,
+      "multifamiliar": 30,
+      "area_fora_da_faixa": 75,
+      "casas": 7884
+    },
+    "licencas": {
+      "linhas": 5090,
+      "unicas": 5090,
+      "com_oficio": 4684,
+      "sem_lote": 435,
+      "no_catalogo": 4249,
+      "piscina": 3589,
+      "solar": 662,
+      "em_lote_com_casa": 4173
+    },
+    "piscinas_osm": {
+      "total": 471,
+      "sem_lote": 51,
+      "em_lote_com_casa": 397
+    },
+    "recortes": {
+      "casas": 7884,
+      "criados": 0,
+      "reaproveitados": 7884,
+      "sem_foto": 0
+    },
+    "conferencia_inicial": {
+      "pool": {
+        "0 x não": 69,
+        "0 x não dá": 15,
+        "0 x sim": 29,
+        "1 x não": 14,
+        "1 x não dá": 11,
+        "1 x sim": 35,
+        "vazio x não": 15,
+        "vazio x não dá": 9,
+        "vazio x sim": 3
+      },
+      "solar": {
+        "0 x não": 129,
+        "0 x não dá": 11,
+        "0 x sim": 1,
+        "1 x não": 25,
+        "1 x não dá": 8,
+        "1 x sim": 20,
+        "vazio x não dá": 6
+      }
+    },
+    "casas": 7884,
+    "lotes_com_casa": 7884,
+    "casas_com_endereco_pct": 100.0,
+    "casas_com_lote_pct": 100.0,
+    "rotulos": {
+      "pool": {
+        "1": 1294,
+        "0": 4891,
+        "vazio": 1699
+      },
+      "solar": {
+        "1": 488,
+        "0": 6920,
+        "vazio": 476
+      }
+    },
+    "vazios_por_motivo": {
+      "pool": {
+        "arvore": 1685,
+        "fora_do_recorte": 14
+      },
+      "solar": {
+        "arvore": 476
+      }
+    },
+    "fonte_da_evidencia": {
+      "pool": {
+        "nenhuma": 6456,
+        "permit": 1068,
+        "osm": 233,
+        "osm+permit": 127
+      },
+      "solar": {
+        "nenhuma": 7393,
+        "permit": 491
+      }
+    },
+    "split": {
+      "test": {
+        "recortes": 1135,
+        "celulas": 11,
+        "pool_1": 137,
+        "solar_1": 82
+      },
+      "train": {
+        "recortes": 5552,
+        "celulas": 33,
+        "pool_1": 945,
+        "solar_1": 343
+      },
+      "val": {
+        "recortes": 1197,
+        "celulas": 8,
+        "pool_1": 212,
+        "solar_1": 63
+      }
+    },
+    "celulas_em_mais_de_um_split": 0,
+    "amostra_conferencia": {
+      "empty": 20,
+      "neg": 70,
+      "pool_pos": 60,
+      "solar_pos": 50
+    },
+    "catalogo": {
+      "bronze.naip_item": 4,
+      "bronze.parcel_raw": 8801,
+      "bronze.address_raw": 11878,
+      "bronze.building_raw": 13371,
+      "bronze.osm_pool_raw": 471,
+      "bronze.permit_raw": 5090,
+      "silver.parcel": 8799,
+      "silver.address": 9241,
+      "silver.house": 7884,
+      "silver.permit_event": 4249,
+      "silver.osm_pool": 471,
+      "silver.chip": 7884,
+      "silver.label": 15768
+    },
+    "segundos": 58.6
+  },
+  "area": {
+    "name": "austin_oeste",
+    "bbox": [
+      -97.82,
+      30.29,
+      -97.76,
+      30.35
+    ]
+  },
+  "config": "a1.yaml"
+}

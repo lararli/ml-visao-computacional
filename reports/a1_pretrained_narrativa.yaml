@@ -1,0 +1,135 @@
+# Texto de análise da parte pré-treinada da A1, escrito depois de olhar os resultados do run. Os números entram por
+# {{marcador}} (ver PretrainedPost.values) e vêm de outputs/<run_id>/a1_pretrained/. Rode
+# `python scripts/run_a1_pretrained.py --post-only` para regenerar a parte pré-treinada no a1.md.
+r10_texto: |
+  Os dois aprendem sem rótulo humano, mas maximizam coisas diferentes.
+
+  O BERT (aula 03) é pré-treinado com o Masked Language Modeling: 15% dos tokens são escondidos e o
+  modelo precisa adivinhá-los pelo contexto dos dois lados. O original também tinha
+  o Next Sentence Prediction (a frase B vem depois da frase A?). O que ele maximiza é a probabilidade do token certo
+  dado o contexto: uma representação de cada palavra que depende da frase inteira. Texto é
+  discreto, então "adivinhe a palavra" é uma tarefa bem definida, e a internet dá dados à vontade.
+
+  O ViT original (aula 04) é pré-treinado de forma supervisionada: classificar imagens do
+  ImageNet-21k ou do JFT-300M. O que ele maximiza é acertar a classe da imagem inteira, pelo token
+  CLS. O pixel é contínuo e redundante, então esconder um patch é fácil de adivinhar pelos vizinhos
+  e ensina pouco; por isso o ViT de 2020 usou rótulos. As versões depois disso trouxeram a ideia do
+  BERT para a imagem: o MAE (Masked Autoencoder) esconde 75% dos patches e reconstrói os pixels, e
+  o DINO e o CLIP aprendem por comparação. O modelo pré-treinado usado aqui (`vit_small_patch16_224` do timm) é
+  do tipo supervisionado: ImageNet-21k e depois ImageNet-1k.
+
+  O que isso muda aqui: o pré-treino supervisionado do ViT ensinou formas e texturas de objetos do
+  dia a dia, fotografados de lado. Piscina e painel solar vistos de cima não estão no ImageNet. O
+  ganho vem das formas genéricas (bordas, cantos, contraste, cor), que servem em qualquer imagem;
+  e a cabeça nova aprende o resto com os nossos recortes.
+
+r14_texto: |
+  O ViT original tem três limites (aula 05): precisa de muitos dados (sem o viés de localidade da
+  convolução, ele só bate a ResNet com pré-treino em centenas de milhões de imagens); a atenção
+  global custa o quadrado do número de patches, então imagem grande ou patch pequeno fica caro; e
+  ele tem uma escala só (todos os patches do mesmo tamanho em todas as camadas), o que atrapalha
+  detecção e segmentação.
+
+  - DeiT (Data-efficient Image Transformer, Facebook, 2021) resolve a fome de dados. Treina só no
+    ImageNet-1k (1,3 milhão de imagens) com augmentation forte e regularização, e com destilação:
+    um token a mais, o token de destilação, aprende a imitar uma CNN professora. A CNN passa o viés
+    de localidade para o ViT sem mudar a arquitetura. Para nós, é o caminho para treinar um ViT com
+    poucas fotos aéreas, usando uma CNN treinada como professora.
+  - Swin Transformer (Microsoft, 2021) resolve o custo e a escala. A atenção é calculada dentro de
+    janelas locais (custo linear no tamanho da imagem), e as janelas deslizam de uma camada para a
+    outra para os patches de janelas vizinhas conversarem. Os patches são fundidos a cada estágio,
+    como uma pirâmide de CNN, então o modelo vê objetos pequenos e grandes. Para nós, é o que
+    permitiria olhar um lote inteiro em resolução alta e achar um painel pequeno no telhado.
+
+  Esta entrega não treina DeiT nem Swin; a escolha deles numa próxima versão está no
+  R15.
+
+r13_texto: |
+  O fine-tuning troca só a última camada: a cabeça do ImageNet (1.000 classes) sai e entra uma
+  Linear de {{vit_pretrained_head_in}} para 2 (piscina e solar), com pesos novos. O corpo inteiro
+  continua treinável, mas com lr {{vit_pretrained_lr}}, dez vezes menor que o do ViT do zero: o
+  corpo já sabe ver bordas, cantos e texturas, e um passo grande apagaria isso. Por isso bastam
+  {{vit_pretrained_epochs}} épocas, contra 75 do zero.
+
+  O recorte de 96 x 96 é ampliado para 224 x 224, que é o tamanho em que o modelo foi pré-treinado.
+  Cada patch de 16 x 16 da entrada ampliada cobre cerca de 7 x 7 pixels do recorte (uns 4 m no
+  chão). A ampliação não cria detalhe novo; ela só põe a imagem na escala que o corpo conhece.
+
+  Na validação, o PR-AUC médio (piscina e solar) vai de {{vit_scratch_val_pr_auc}} no ViT do zero
+  para {{vit_pretrained_val_pr_auc}} no pré-treinado, com {{vit_pretrained_train_min}} min de treino
+  contra {{vit_scratch_train_min}} min.
+
+r16_texto: |
+  **Escolha: o ViT-S pré-treinado.** Ele tem o maior PR-AUC médio na validação
+  ({{vit_pretrained_val_pr_auc}}, contra {{resnet18_val_pr_auc}} da ResNet-18 e
+  {{vit_scratch_val_pr_auc}} do ViT do zero). A escolha usa a validação, e não o teste, para o teste
+  continuar sendo uma medida limpa. É o modelo que alimenta a gold.
+
+  O maior ganho é no solar, o atributo pequeno. No teste inteiro, o PR-AUC vai de
+  {{vit_scratch_test_solar_pr_auc}} (do zero) para {{vit_pretrained_test_solar_pr_auc}}
+  (pré-treinado). Na amostra conferida a olho, o F1 vai de {{vit_scratch_rev_solar_f1}} para
+  {{vit_pretrained_rev_solar_f1}}, com recall {{vit_pretrained_rev_solar_recall}}. O corpo
+  pré-treinado já sabe ver bordas finas, retângulos e texturas, e é isso que um painel de um ou dois
+  patches precisa.
+
+  Na piscina, o rótulo automático esconde a diferença. Contra ele, os três ficam baixos e perto um do
+  outro (PR-AUC {{vit_scratch_test_pool_pr_auc}}, {{vit_pretrained_test_pool_pr_auc}} e
+  {{resnet18_test_pool_pr_auc}}), e o pré-treinado parece até pior que o do zero. Contra a marcação a
+  olho, a ordem se inverte: PR-AUC {{vit_pretrained_rev_pool_pr_auc}} no pré-treinado,
+  {{resnet18_rev_pool_pr_auc}} na ResNet-18 e {{vit_scratch_rev_pool_pr_auc}} no do zero. O
+  pré-treinado acha piscinas que o OSM e as licenças não têm, e o teste automático conta cada uma como
+  erro. Por isso a amostra conferida pesa na escolha.
+
+  A ResNet-18 chega perto: no solar, F1 {{resnet18_test_solar_f1}} contra
+  {{vit_pretrained_test_solar_f1}} no teste inteiro, com metade dos parâmetros
+  ({{resnet18_params_m}} M contra {{vit_pretrained_params_m}} M) e {{resnet18_train_min}} min de
+  treino contra {{vit_pretrained_train_min}}. Ela é a alternativa barata se o custo de rodar na cidade
+  inteira pesar mais que alguns centésimos de PR-AUC. O ViT do zero fica como linha de base e como
+  ferramenta para entender a atenção.
+
+  Cuidado com diferenças pequenas: cada modelo treinou uma vez, numa seed, e a amostra conferida tem
+  menos de 200 recortes por atributo. Uma diferença de poucos centésimos entre o ViT-S e a ResNet-18
+  não prova que um é melhor; a diferença contra o ViT do zero, sim.
+
+abstencao_texto: |
+  Na piscina, o modelo decide em {{abs_pool_coverage}} das casas do teste: {{abs_pool_yes}} "sim",
+  {{abs_pool_no}} "não" e {{abs_pool_abstain}} "não dá" ({{abs_pool_reason_arvore}} por árvore e
+  {{abs_pool_reason_incerto}} por incerteza). Na amostra conferida, quando ele diz "sim", acerta
+  {{abs_pool_reviewed_yes_precision}}; contra o catálogo, só {{abs_pool_catalog_yes_precision}},
+  pela mesma razão de antes: o catálogo não tem todas as piscinas. O "não" acerta
+  {{abs_pool_reviewed_no_npv}} na amostra conferida.
+
+  No solar, ele decide em {{abs_solar_coverage}} das casas. A faixa de incerteza é estreita
+  ({{band_solar_low}} a {{band_solar_high}}), porque na validação o "sim" já acerta 60% logo acima do
+  limiar; quase todo "não dá" é árvore sobre o telhado ({{abs_solar_reason_arvore}} casas). Na
+  amostra conferida, o "sim" acerta {{abs_solar_reviewed_yes_precision}} e o "não",
+  {{abs_solar_reviewed_no_npv}}.
+
+  A tabela de evidência é onde a POC vira trabalho. Na piscina, {{agree_pool_imagem_sem_licenca}}
+  casas têm piscina na foto e nenhuma licença nem registro no OSM: é a lista para conferir (obra sem
+  licença, ou cliente em potencial para manutenção). Outras {{agree_pool_licenca_sem_imagem}} têm
+  registro e a foto diz "não": piscina coberta, obra não terminada ou erro do modelo. O "não dá" com
+  motivo diz quais casas precisam de outra fonte (foto de rua ou visita), em vez de um palpite.
+
+r15_texto: |
+  **Quando o ViT supera a CNN.** Quando há pré-treino em muitos dados: com o ImageNet-21k, o ViT-S
+  passou a ResNet-18 na validação ({{vit_pretrained_val_pr_auc}} contra {{resnet18_val_pr_auc}}). E
+  quando a decisão depende de partes distantes da imagem: a atenção liga, já na primeira camada,
+  qualquer patch a qualquer outro (a piscina ao fundo do lote e o telhado da casa), enquanto a CNN
+  precisa empilhar camadas para o campo receptivo crescer. Com mais dados, o ViT continua melhorando,
+  e a CNN satura antes (aula 04).
+
+  **Quando a CNN é melhor.** Com poucos dados e sem pré-treino: a convolução já assume localidade e
+  que um objeto é o mesmo em qualquer lugar da imagem, e o ViT precisa aprender isso com dados. O ViT
+  do zero, com cerca de 5.500 recortes, ficou em {{vit_scratch_val_pr_auc}} na validação. Com pouco
+  computador ou pouco tempo de resposta: a ResNet-18 treinou em {{resnet18_train_min}} min, com
+  {{resnet18_params_m}} M de parâmetros. Com imagem grande ou em resolução alta: a atenção custa o
+  quadrado do número de patches, e a convolução cresce linear (o Swin resolve isso com janelas).
+
+  **No nosso domínio.** Foto aérea de 0,6 m por pixel, recortes de 96 x 96, poucos milhares de
+  rótulos com ruído e objetos pequenos. O pré-treino é obrigatório; sem ele, nenhum dos dois serve:
+  no solar, o PR-AUC do teste é {{vit_scratch_test_solar_pr_auc}} no ViT do zero, contra
+  {{resnet18_test_solar_pr_auc}} na ResNet-18 e {{vit_pretrained_test_solar_pr_auc}} no ViT-S pré-treinado.
+  Entre os pré-treinados, a diferença é pequena. Para a POC e para a gold, o ViT-S, que acerta mais.
+  Para rodar a cidade inteira (centenas de milhares de lotes), a ResNet-18 é a opção de custo, e o
+  próximo teste seria um Swin em resolução maior, que junta a atenção com o custo da CNN.

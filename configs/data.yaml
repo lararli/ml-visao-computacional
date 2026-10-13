@@ -1,0 +1,34 @@
+# Fontes de dados do projeto. A pasta de dados é data.nosync/,
+# ou a variável VISAOCOMP_DATA_DIR quando definida.
+#
+# version: número fixado da versão no Kaggle (o endpoint aceita ?datasetVersionNumber=).
+# sha256:  checksum do arquivo .zip da versão fixada; conferido em todo make data.
+#          Se estiver vazio (null), o primeiro download grava o valor aqui.
+# dest:    pasta de destino, relativa à pasta de dados.
+catalog: catalog.duckdb
+schemas: [bronze, silver, gold]
+sources:
+  - name: ads16
+    activity: A2
+    kind: kaggle
+    owner: groffo
+    dataset: ads16-dataset
+    version: 1
+    sha256: 1f59d5c40e645d5004a9c13a573ba301d4356db5cc27beef50953e3068a81c47
+    dest: raw/ads16
+  - name: images_dataset
+    activity: A3
+    kind: kaggle
+    owner: pavansanagapati
+    dataset: images-dataset
+    version: 1
+    sha256: b54b28098dc03b74dba1db2592b021f020df30a976876e313e315cb1158ed47d
+    dest: raw/images_dataset
+  - name: covid_xray
+    activity: A4
+    kind: kaggle
+    owner: sachinkumar413
+    dataset: covid-pneumonia-normal-chest-xray-images
+    version: 1
+    sha256: 8e6839f126d999c3e4e9cc57f72cba857f098aa495f318c6aa77e5a0722e7a5b
+    dest: raw/covid_xray

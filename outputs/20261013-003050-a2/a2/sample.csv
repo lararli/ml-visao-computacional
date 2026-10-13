@@ -1,0 +1,601 @@
+image_path,source,folder,category,stratum
+Ads/1/1.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/10.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/11.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/12.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/13.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/14.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/15.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/16.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/2.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/3.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/4.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/5.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/6.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/7.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/8.png,ad,1,Clothing & Shoes,ad/1
+Ads/1/9.png,ad,1,Clothing & Shoes,ad/1
+Ads/10/1.png,ad,10,Grocery,ad/10
+Ads/10/10.png,ad,10,Grocery,ad/10
+Ads/10/11.png,ad,10,Grocery,ad/10
+Ads/10/12.png,ad,10,Grocery,ad/10
+Ads/10/13.png,ad,10,Grocery,ad/10
+Ads/10/14.png,ad,10,Grocery,ad/10
+Ads/10/15.png,ad,10,Grocery,ad/10
+Ads/10/2.png,ad,10,Grocery,ad/10
+Ads/10/3.png,ad,10,Grocery,ad/10
+Ads/10/4.png,ad,10,Grocery,ad/10
+Ads/10/5.png,ad,10,Grocery,ad/10
+Ads/10/6.png,ad,10,Grocery,ad/10
+Ads/10/7.png,ad,10,Grocery,ad/10
+Ads/10/8.png,ad,10,Grocery,ad/10
+Ads/10/9.png,ad,10,Grocery,ad/10
+Ads/11/1.png,ad,11,Kitchen & Home,ad/11
+Ads/11/10.png,ad,11,Kitchen & Home,ad/11
+Ads/11/11.png,ad,11,Kitchen & Home,ad/11
+Ads/11/12.png,ad,11,Kitchen & Home,ad/11
+Ads/11/13.png,ad,11,Kitchen & Home,ad/11
+Ads/11/14.png,ad,11,Kitchen & Home,ad/11
+Ads/11/15.png,ad,11,Kitchen & Home,ad/11
+Ads/11/2.png,ad,11,Kitchen & Home,ad/11
+Ads/11/3.png,ad,11,Kitchen & Home,ad/11
+Ads/11/4.png,ad,11,Kitchen & Home,ad/11
+Ads/11/5.png,ad,11,Kitchen & Home,ad/11
+Ads/11/6.png,ad,11,Kitchen & Home,ad/11
+Ads/11/7.png,ad,11,Kitchen & Home,ad/11
+Ads/11/8.png,ad,11,Kitchen & Home,ad/11
+Ads/11/9.png,ad,11,Kitchen & Home,ad/11
+Ads/12/1.png,ad,12,Betting,ad/12
+Ads/12/10.png,ad,12,Betting,ad/12
+Ads/12/11.png,ad,12,Betting,ad/12
+Ads/12/12.png,ad,12,Betting,ad/12
+Ads/12/13.png,ad,12,Betting,ad/12
+Ads/12/14.png,ad,12,Betting,ad/12
+Ads/12/15.png,ad,12,Betting,ad/12
+Ads/12/2.png,ad,12,Betting,ad/12
+Ads/12/3.png,ad,12,Betting,ad/12
+Ads/12/4.png,ad,12,Betting,ad/12
+Ads/12/5.png,ad,12,Betting,ad/12
+Ads/12/6.png,ad,12,Betting,ad/12
+Ads/12/7.png,ad,12,Betting,ad/12
+Ads/12/8.png,ad,12,Betting,ad/12
+Ads/12/9.png,ad,12,Betting,ad/12
+Ads/13/1.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/10.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/11.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/12.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/13.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/14.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/15.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/2.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/3.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/4.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/5.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/6.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/7.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/8.png,ad,13,Jewellery & Watches,ad/13
+Ads/13/9.png,ad,13,Jewellery & Watches,ad/13
+Ads/14/1.png,ad,14,Musical Instruments,ad/14
+Ads/14/10.png,ad,14,Musical Instruments,ad/14
+Ads/14/11.png,ad,14,Musical Instruments,ad/14
+Ads/14/12.png,ad,14,Musical Instruments,ad/14
+Ads/14/13.png,ad,14,Musical Instruments,ad/14
+Ads/14/14.png,ad,14,Musical Instruments,ad/14
+Ads/14/15.png,ad,14,Musical Instruments,ad/14
+Ads/14/2.png,ad,14,Musical Instruments,ad/14
+Ads/14/3.png,ad,14,Musical Instruments,ad/14
+Ads/14/4.png,ad,14,Musical Instruments,ad/14
+Ads/14/5.png,ad,14,Musical Instruments,ad/14
+Ads/14/6.png,ad,14,Musical Instruments,ad/14
+Ads/14/7.png,ad,14,Musical Instruments,ad/14
+Ads/14/8.png,ad,14,Musical Instruments,ad/14
+Ads/14/9.png,ad,14,Musical Instruments,ad/14
+Ads/15/1.png,ad,15,Office Products,ad/15
+Ads/15/10.png,ad,15,Office Products,ad/15
+Ads/15/11.png,ad,15,Office Products,ad/15
+Ads/15/12.png,ad,15,Office Products,ad/15
+Ads/15/13.png,ad,15,Office Products,ad/15
+Ads/15/14.png,ad,15,Office Products,ad/15
+Ads/15/15.png,ad,15,Office Products,ad/15
+Ads/15/2.png,ad,15,Office Products,ad/15
+Ads/15/3.png,ad,15,Office Products,ad/15
+Ads/15/4.png,ad,15,Office Products,ad/15
+Ads/15/5.png,ad,15,Office Products,ad/15
+Ads/15/6.png,ad,15,Office Products,ad/15
+Ads/15/7.png,ad,15,Office Products,ad/15
+Ads/15/8.png,ad,15,Office Products,ad/15
+Ads/15/9.png,ad,15,Office Products,ad/15
+Ads/16/1.png,ad,16,Pet Supplies,ad/16
+Ads/16/10.png,ad,16,Pet Supplies,ad/16
+Ads/16/11.png,ad,16,Pet Supplies,ad/16
+Ads/16/12.png,ad,16,Pet Supplies,ad/16
+Ads/16/13.png,ad,16,Pet Supplies,ad/16
+Ads/16/14.png,ad,16,Pet Supplies,ad/16
+Ads/16/15.png,ad,16,Pet Supplies,ad/16
+Ads/16/2.png,ad,16,Pet Supplies,ad/16
+Ads/16/3.png,ad,16,Pet Supplies,ad/16
+Ads/16/4.png,ad,16,Pet Supplies,ad/16
+Ads/16/5.png,ad,16,Pet Supplies,ad/16
+Ads/16/6.png,ad,16,Pet Supplies,ad/16
+Ads/16/7.png,ad,16,Pet Supplies,ad/16
+Ads/16/8.png,ad,16,Pet Supplies,ad/16
+Ads/16/9.png,ad,16,Pet Supplies,ad/16
+Ads/17/1.png,ad,17,Computer Software,ad/17
+Ads/17/10.png,ad,17,Computer Software,ad/17
+Ads/17/11.png,ad,17,Computer Software,ad/17
+Ads/17/12.png,ad,17,Computer Software,ad/17
+Ads/17/13.png,ad,17,Computer Software,ad/17
+Ads/17/14.png,ad,17,Computer Software,ad/17
+Ads/17/15.png,ad,17,Computer Software,ad/17
+Ads/17/2.png,ad,17,Computer Software,ad/17
+Ads/17/3.png,ad,17,Computer Software,ad/17
+Ads/17/4.png,ad,17,Computer Software,ad/17
+Ads/17/5.png,ad,17,Computer Software,ad/17
+Ads/17/6.png,ad,17,Computer Software,ad/17
+Ads/17/7.png,ad,17,Computer Software,ad/17
+Ads/17/8.png,ad,17,Computer Software,ad/17
+Ads/17/9.png,ad,17,Computer Software,ad/17
+Ads/18/1.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/10.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/11.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/12.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/13.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/14.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/15.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/2.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/3.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/4.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/5.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/6.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/7.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/8.png,ad,18,Sports & Outdoors,ad/18
+Ads/18/9.png,ad,18,Sports & Outdoors,ad/18
+Ads/19/1.png,ad,19,Toys & Games,ad/19
+Ads/19/10.png,ad,19,Toys & Games,ad/19
+Ads/19/11.png,ad,19,Toys & Games,ad/19
+Ads/19/12.png,ad,19,Toys & Games,ad/19
+Ads/19/13.png,ad,19,Toys & Games,ad/19
+Ads/19/14.png,ad,19,Toys & Games,ad/19
+Ads/19/15.png,ad,19,Toys & Games,ad/19
+Ads/19/2.png,ad,19,Toys & Games,ad/19
+Ads/19/3.png,ad,19,Toys & Games,ad/19
+Ads/19/4.png,ad,19,Toys & Games,ad/19
+Ads/19/5.png,ad,19,Toys & Games,ad/19
+Ads/19/6.png,ad,19,Toys & Games,ad/19
+Ads/19/7.png,ad,19,Toys & Games,ad/19
+Ads/19/8.png,ad,19,Toys & Games,ad/19
+Ads/19/9.png,ad,19,Toys & Games,ad/19
+Ads/2/1.png,ad,2,Automotive,ad/2
+Ads/2/10.png,ad,2,Automotive,ad/2
+Ads/2/11.png,ad,2,Automotive,ad/2
+Ads/2/12.png,ad,2,Automotive,ad/2
+Ads/2/13.png,ad,2,Automotive,ad/2
+Ads/2/14.png,ad,2,Automotive,ad/2
+Ads/2/15.png,ad,2,Automotive,ad/2
+Ads/2/2.png,ad,2,Automotive,ad/2
+Ads/2/3.png,ad,2,Automotive,ad/2
+Ads/2/4.png,ad,2,Automotive,ad/2
+Ads/2/5.png,ad,2,Automotive,ad/2
+Ads/2/6.png,ad,2,Automotive,ad/2
+Ads/2/7.png,ad,2,Automotive,ad/2
+Ads/2/8.png,ad,2,Automotive,ad/2
+Ads/2/9.png,ad,2,Automotive,ad/2
+Ads/20/1.png,ad,20,Dating Sites,ad/20
+Ads/20/10.png,ad,20,Dating Sites,ad/20
+Ads/20/11.png,ad,20,Dating Sites,ad/20
+Ads/20/12.png,ad,20,Dating Sites,ad/20
+Ads/20/13.png,ad,20,Dating Sites,ad/20
+Ads/20/14.png,ad,20,Dating Sites,ad/20
+Ads/20/15.png,ad,20,Dating Sites,ad/20
+Ads/20/2.png,ad,20,Dating Sites,ad/20
+Ads/20/3.png,ad,20,Dating Sites,ad/20
+Ads/20/4.png,ad,20,Dating Sites,ad/20
+Ads/20/5.png,ad,20,Dating Sites,ad/20
+Ads/20/6.png,ad,20,Dating Sites,ad/20
+Ads/20/7.png,ad,20,Dating Sites,ad/20
+Ads/20/8.png,ad,20,Dating Sites,ad/20
+Ads/20/9.png,ad,20,Dating Sites,ad/20
+Ads/3/1.png,ad,3,Baby Products,ad/3
+Ads/3/10.png,ad,3,Baby Products,ad/3
+Ads/3/11.png,ad,3,Baby Products,ad/3
+Ads/3/12.png,ad,3,Baby Products,ad/3
+Ads/3/13.png,ad,3,Baby Products,ad/3
+Ads/3/14.png,ad,3,Baby Products,ad/3
+Ads/3/15.png,ad,3,Baby Products,ad/3
+Ads/3/2.png,ad,3,Baby Products,ad/3
+Ads/3/3.png,ad,3,Baby Products,ad/3
+Ads/3/4.png,ad,3,Baby Products,ad/3
+Ads/3/5.png,ad,3,Baby Products,ad/3
+Ads/3/6.png,ad,3,Baby Products,ad/3
+Ads/3/7.png,ad,3,Baby Products,ad/3
+Ads/3/8.png,ad,3,Baby Products,ad/3
+Ads/3/9.png,ad,3,Baby Products,ad/3
+Ads/4/1.png,ad,4,Health & Beauty,ad/4
+Ads/4/10.png,ad,4,Health & Beauty,ad/4
+Ads/4/11.png,ad,4,Health & Beauty,ad/4
+Ads/4/12.png,ad,4,Health & Beauty,ad/4
+Ads/4/13.png,ad,4,Health & Beauty,ad/4
+Ads/4/14.png,ad,4,Health & Beauty,ad/4
+Ads/4/15.png,ad,4,Health & Beauty,ad/4
+Ads/4/2.png,ad,4,Health & Beauty,ad/4
+Ads/4/3.png,ad,4,Health & Beauty,ad/4
+Ads/4/4.png,ad,4,Health & Beauty,ad/4
+Ads/4/5.png,ad,4,Health & Beauty,ad/4
+Ads/4/6.png,ad,4,Health & Beauty,ad/4
+Ads/4/7.png,ad,4,Health & Beauty,ad/4
+Ads/4/8.png,ad,4,Health & Beauty,ad/4
+Ads/4/9.png,ad,4,Health & Beauty,ad/4
+Ads/5/1.png,ad,5,Media (BMVD),ad/5
+Ads/5/10.png,ad,5,Media (BMVD),ad/5
+Ads/5/11.png,ad,5,Media (BMVD),ad/5
+Ads/5/12.png,ad,5,Media (BMVD),ad/5
+Ads/5/13.png,ad,5,Media (BMVD),ad/5
+Ads/5/14.png,ad,5,Media (BMVD),ad/5
+Ads/5/15.png,ad,5,Media (BMVD),ad/5
+Ads/5/2.png,ad,5,Media (BMVD),ad/5
+Ads/5/3.png,ad,5,Media (BMVD),ad/5
+Ads/5/4.png,ad,5,Media (BMVD),ad/5
+Ads/5/5.png,ad,5,Media (BMVD),ad/5
+Ads/5/6.png,ad,5,Media (BMVD),ad/5
+Ads/5/7.png,ad,5,Media (BMVD),ad/5
+Ads/5/8.png,ad,5,Media (BMVD),ad/5
+Ads/5/9.png,ad,5,Media (BMVD),ad/5
+Ads/6/1.png,ad,6,Consumer Electronics,ad/6
+Ads/6/10.png,ad,6,Consumer Electronics,ad/6
+Ads/6/11.png,ad,6,Consumer Electronics,ad/6
+Ads/6/12.png,ad,6,Consumer Electronics,ad/6
+Ads/6/13.png,ad,6,Consumer Electronics,ad/6
+Ads/6/14.png,ad,6,Consumer Electronics,ad/6
+Ads/6/15.png,ad,6,Consumer Electronics,ad/6
+Ads/6/2.png,ad,6,Consumer Electronics,ad/6
+Ads/6/3.png,ad,6,Consumer Electronics,ad/6
+Ads/6/4.png,ad,6,Consumer Electronics,ad/6
+Ads/6/5.png,ad,6,Consumer Electronics,ad/6
+Ads/6/6.png,ad,6,Consumer Electronics,ad/6
+Ads/6/7.png,ad,6,Consumer Electronics,ad/6
+Ads/6/8.png,ad,6,Consumer Electronics,ad/6
+Ads/6/9.png,ad,6,Consumer Electronics,ad/6
+Ads/7/1.png,ad,7,Console & Video Games,ad/7
+Ads/7/10.png,ad,7,Console & Video Games,ad/7
+Ads/7/11.png,ad,7,Console & Video Games,ad/7
+Ads/7/12.png,ad,7,Console & Video Games,ad/7
+Ads/7/13.png,ad,7,Console & Video Games,ad/7
+Ads/7/14.png,ad,7,Console & Video Games,ad/7
+Ads/7/15.png,ad,7,Console & Video Games,ad/7
+Ads/7/2.png,ad,7,Console & Video Games,ad/7
+Ads/7/3.png,ad,7,Console & Video Games,ad/7
+Ads/7/4.png,ad,7,Console & Video Games,ad/7
+Ads/7/5.png,ad,7,Console & Video Games,ad/7
+Ads/7/6.png,ad,7,Console & Video Games,ad/7
+Ads/7/7.png,ad,7,Console & Video Games,ad/7
+Ads/7/8.png,ad,7,Console & Video Games,ad/7
+Ads/7/9.png,ad,7,Console & Video Games,ad/7
+Ads/8/1.png,ad,8,DIY & Tools,ad/8
+Ads/8/10.png,ad,8,DIY & Tools,ad/8
+Ads/8/11.png,ad,8,DIY & Tools,ad/8
+Ads/8/12.png,ad,8,DIY & Tools,ad/8
+Ads/8/13.png,ad,8,DIY & Tools,ad/8
+Ads/8/14.png,ad,8,DIY & Tools,ad/8
+Ads/8/15.png,ad,8,DIY & Tools,ad/8
+Ads/8/2.png,ad,8,DIY & Tools,ad/8
+Ads/8/3.png,ad,8,DIY & Tools,ad/8
+Ads/8/4.png,ad,8,DIY & Tools,ad/8
+Ads/8/5.png,ad,8,DIY & Tools,ad/8
+Ads/8/6.png,ad,8,DIY & Tools,ad/8
+Ads/8/7.png,ad,8,DIY & Tools,ad/8
+Ads/8/8.png,ad,8,DIY & Tools,ad/8
+Ads/8/9.png,ad,8,DIY & Tools,ad/8
+Ads/9/1.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/10.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/11.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/12.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/13.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/14.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/15.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/2.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/3.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/4.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/5.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/6.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/7.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/8.png,ad,9,Garden & Outdoor living,ad/9
+Ads/9/9.png,ad,9,Garden & Outdoor living,ad/9
+Corpus/U0002/U0002-IM-NEG/2_th_1445286420.png,pessoal,,,pessoal/NEG
+Corpus/U0002/U0002-IM-POS/1_th_1445286038.png,pessoal,,,pessoal/POS
+Corpus/U0002/U0002-IM-POS/3_th_1445286188.png,pessoal,,,pessoal/POS
+Corpus/U0003/U0003-IM-POS/1_th_1445288654.png,pessoal,,,pessoal/POS
+Corpus/U0003/U0003-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0003/U0003-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0004/U0004-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0004/U0004-IM-POS/3_th_1445336194.png,pessoal,,,pessoal/POS
+Corpus/U0005/U0005-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0005/U0005-IM-NEG/5_th_1445341386.png,pessoal,,,pessoal/NEG
+Corpus/U0005/U0005-IM-POS/1_th_1445340278.png,pessoal,,,pessoal/POS
+Corpus/U0005/U0005-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0006/U0006-IM-NEG/1_th_1445386630.png,pessoal,,,pessoal/NEG
+Corpus/U0006/U0006-IM-NEG/4_th_1445387168.png,pessoal,,,pessoal/NEG
+Corpus/U0006/U0006-IM-POS/3_th_1445386084.png,pessoal,,,pessoal/POS
+Corpus/U0006/U0006-IM-POS/4_th_1445386299.png,pessoal,,,pessoal/POS
+Corpus/U0008/U0008-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0009/U0009-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0009/U0009-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0011/U0011-IM-NEG/2_th_1445454004.png,pessoal,,,pessoal/NEG
+Corpus/U0011/U0011-IM-NEG/5_th_1445454082.png,pessoal,,,pessoal/NEG
+Corpus/U0011/U0011-IM-NEG/6_th_1445454131.png,pessoal,,,pessoal/NEG
+Corpus/U0012/U0012-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0012/U0012-IM-NEG/3_th_1445459433.png,pessoal,,,pessoal/NEG
+Corpus/U0012/U0012-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0012/U0012-IM-POS/2_th_1445459152.png,pessoal,,,pessoal/POS
+Corpus/U0012/U0012-IM-POS/3_th_1445459167.png,pessoal,,,pessoal/POS
+Corpus/U0013/U0013-IM-NEG/2_th_1445459389.png,pessoal,,,pessoal/NEG
+Corpus/U0013/U0013-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0013/U0013-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0014/U0014-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0014/U0014-IM-POS/1_th_1445469024.png,pessoal,,,pessoal/POS
+Corpus/U0015/U0015-IM-POS/2_th_1445481690.png,pessoal,,,pessoal/POS
+Corpus/U0015/U0015-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0016/U0016-IM-NEG/3_th_1445482967.png,pessoal,,,pessoal/NEG
+Corpus/U0016/U0016-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0016/U0016-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0016/U0016-IM-POS/5_th_1445482395.png,pessoal,,,pessoal/POS
+Corpus/U0017/U0017-IM-NEG/4_th_1445484043.png,pessoal,,,pessoal/NEG
+Corpus/U0017/U0017-IM-POS/2_th_1445483595.png,pessoal,,,pessoal/POS
+Corpus/U0017/U0017-IM-POS/3_th_1445483621.png,pessoal,,,pessoal/POS
+Corpus/U0017/U0017-IM-POS/5_th_1445483646.png,pessoal,,,pessoal/POS
+Corpus/U0018/U0018-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0018/U0018-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0018/U0018-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0019/U0019-IM-NEG/1_th_1445540825.png,pessoal,,,pessoal/NEG
+Corpus/U0019/U0019-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0019/U0019-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0020/U0020-IM-NEG/1_th_1445541104.png,pessoal,,,pessoal/NEG
+Corpus/U0020/U0020-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0020/U0020-IM-POS/4_th_1445540958.png,pessoal,,,pessoal/POS
+Corpus/U0021/U0021-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0021/U0021-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0021/U0021-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0022/U0022-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0023/U0023-IM-POS/1_th_1445630032.png,pessoal,,,pessoal/POS
+Corpus/U0023/U0023-IM-POS/3_th_1445630290.png,pessoal,,,pessoal/POS
+Corpus/U0023/U0023-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0024/U0024-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0024/U0024-IM-NEG/2_th_1445650289.png,pessoal,,,pessoal/NEG
+Corpus/U0024/U0024-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0025/U0025-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0025/U0025-IM-POS/5_th_1445708167.png,pessoal,,,pessoal/POS
+Corpus/U0026/U0026-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0026/U0026-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0027/U0027-IM-NEG/3_th_1445779720.png,pessoal,,,pessoal/NEG
+Corpus/U0028/U0028-IM-NEG/3_th_1445792270.png,pessoal,,,pessoal/NEG
+Corpus/U0028/U0028-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0028/U0028-IM-POS/2_th_1445790923.png,pessoal,,,pessoal/POS
+Corpus/U0028/U0028-IM-POS/5_th_1445791548.png,pessoal,,,pessoal/POS
+Corpus/U0029/U0029-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0030/U0030-IM-NEG/2_th_1446030550.png,pessoal,,,pessoal/NEG
+Corpus/U0030/U0030-IM-POS/1_th_1446029889.png,pessoal,,,pessoal/POS
+Corpus/U0030/U0030-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0031/U0031-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0031/U0031-IM-POS/3_th_1445862988.png,pessoal,,,pessoal/POS
+Corpus/U0033/U0033-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0033/U0033-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0033/U0033-IM-POS/4_th_1446013315.png,pessoal,,,pessoal/POS
+Corpus/U0035/U0035-IM-NEG/4_th_1448396119.png,pessoal,,,pessoal/NEG
+Corpus/U0035/U0035-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0035/U0035-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0036/U0036-IM-NEG/3_th_1446030606.png,pessoal,,,pessoal/NEG
+Corpus/U0036/U0036-IM-POS/1_th_1446029756.png,pessoal,,,pessoal/POS
+Corpus/U0036/U0036-IM-POS/2_th_1446029765.png,pessoal,,,pessoal/POS
+Corpus/U0036/U0036-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0037/U0037-IM-POS/2_th_1446029656.png,pessoal,,,pessoal/POS
+Corpus/U0037/U0037-IM-POS/3_th_1446029662.png,pessoal,,,pessoal/POS
+Corpus/U0038/U0038-IM-POS/2_th_1446126352.png,pessoal,,,pessoal/POS
+Corpus/U0038/U0038-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0038/U0038-IM-POS/3_th_1446126377.png,pessoal,,,pessoal/POS
+Corpus/U0038/U0038-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0039/U0039-IM-NEG/1_th_1446445814.png,pessoal,,,pessoal/NEG
+Corpus/U0039/U0039-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0039/U0039-IM-NEG/5_th_1446447396.png,pessoal,,,pessoal/NEG
+Corpus/U0039/U0039-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0039/U0039-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0039/U0039-IM-POS/4_th_1446445575.png,pessoal,,,pessoal/POS
+Corpus/U0040/U0040-IM-NEG/4_th_1446455957.png,pessoal,,,pessoal/NEG
+Corpus/U0040/U0040-IM-POS/5_th_1446455649.png,pessoal,,,pessoal/POS
+Corpus/U0041/U0041-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0042/U0042-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0042/U0042-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0043/U0043-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0043/U0043-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0044/U0044-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0044/U0044-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0044/U0044-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0045/U0045-IM-POS/6.png,pessoal,,,pessoal/POS
+Corpus/U0046/U0046-IM-NEG/3_th_1446597984.png,pessoal,,,pessoal/NEG
+Corpus/U0046/U0046-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0047/U0047-IM-NEG/3_th_1447062011.png,pessoal,,,pessoal/NEG
+Corpus/U0048/U0048-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0048/U0048-IM-NEG/5_th_1448380519.png,pessoal,,,pessoal/NEG
+Corpus/U0049/U0049-IM-NEG/2_th_1448374291.png,pessoal,,,pessoal/NEG
+Corpus/U0049/U0049-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0050/U0050-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0051/U0051-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0051/U0051-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0051/U0051-IM-NEG/4_th_1457041705.png,pessoal,,,pessoal/NEG
+Corpus/U0051/U0051-IM-NEG/5_th_1457041715.png,pessoal,,,pessoal/NEG
+Corpus/U0051/U0051-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0052/U0052-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0052/U0052-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0052/U0052-IM-NEG/4_th_1457113203.png,pessoal,,,pessoal/NEG
+Corpus/U0052/U0052-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0053/U0053-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0053/U0053-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0054/U0054-IM-NEG/3_th_1457114961.png,pessoal,,,pessoal/NEG
+Corpus/U0054/U0054-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0055/U0055-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0055/U0055-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0055/U0055-IM-POS/5_th_1457116783.png,pessoal,,,pessoal/POS
+Corpus/U0056/U0056-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0056/U0056-IM-NEG/3_th_1457117824.png,pessoal,,,pessoal/NEG
+Corpus/U0056/U0056-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0057/U0057-IM-NEG/4_th_1457118529.png,pessoal,,,pessoal/NEG
+Corpus/U0057/U0057-IM-POS/5_th_1457118277.png,pessoal,,,pessoal/POS
+Corpus/U0058/U0058-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0058/U0058-IM-NEG/2_th_1457120446.png,pessoal,,,pessoal/NEG
+Corpus/U0058/U0058-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0059/U0059-IM-POS/4_th_1457120908.png,pessoal,,,pessoal/POS
+Corpus/U0060/U0060-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0060/U0060-IM-POS/4_th_1457121029.png,pessoal,,,pessoal/POS
+Corpus/U0061/U0061-IM-NEG/4_th_1457124438.png,pessoal,,,pessoal/NEG
+Corpus/U0061/U0061-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0061/U0061-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0061/U0061-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0061/U0061-IM-POS/2_th_1457123437.png,pessoal,,,pessoal/POS
+Corpus/U0061/U0061-IM-POS/4_th_1457123578.png,pessoal,,,pessoal/POS
+Corpus/U0062/U0062-IM-POS/1_th_1457140827.png,pessoal,,,pessoal/POS
+Corpus/U0062/U0062-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0063/U0063-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0063/U0063-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0063/U0063-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0064/U0064-IM-POS/1_th_1457173657.png,pessoal,,,pessoal/POS
+Corpus/U0066/U0066-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0067/U0067-IM-NEG/3_th_1457187955.png,pessoal,,,pessoal/NEG
+Corpus/U0068/U0068-IM-NEG/2_th_1457195835.png,pessoal,,,pessoal/NEG
+Corpus/U0069/U0069-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0069/U0069-IM-NEG/1_th_1457199262.png,pessoal,,,pessoal/NEG
+Corpus/U0069/U0069-IM-NEG/2_th_1457199272.png,pessoal,,,pessoal/NEG
+Corpus/U0069/U0069-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0069/U0069-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0070/U0070-IM-NEG/3_th_1457285067.png,pessoal,,,pessoal/NEG
+Corpus/U0070/U0070-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0071/U0071-IM-NEG/3_th_1457306684.png,pessoal,,,pessoal/NEG
+Corpus/U0071/U0071-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0071/U0071-IM-NEG/5_th_1457306822.png,pessoal,,,pessoal/NEG
+Corpus/U0071/U0071-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0071/U0071-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0072/U0072-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0072/U0072-IM-POS/5_th_1457450657.png,pessoal,,,pessoal/POS
+Corpus/U0074/U0074-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0074/U0074-IM-NEG/2_th_1457533188.png,pessoal,,,pessoal/NEG
+Corpus/U0074/U0074-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0074/U0074-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0075/U0075-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0075/U0075-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0076/U0076-IM-NEG/2_th_1457533755.png,pessoal,,,pessoal/NEG
+Corpus/U0077/U0077-IM-NEG/1_th_1457534263.png,pessoal,,,pessoal/NEG
+Corpus/U0077/U0077-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0078/U0078-IM-NEG/2_th_1457550664.png,pessoal,,,pessoal/NEG
+Corpus/U0078/U0078-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0078/U0078-IM-NEG/5_th_1457551172.png,pessoal,,,pessoal/NEG
+Corpus/U0078/U0078-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0079/U0079-IM-NEG/1_th_1457554087.png,pessoal,,,pessoal/NEG
+Corpus/U0079/U0079-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0079/U0079-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0079/U0079-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0080/U0080-IM-NEG/4_th_1457561007.png,pessoal,,,pessoal/NEG
+Corpus/U0080/U0080-IM-NEG/5_th_1457561039.png,pessoal,,,pessoal/NEG
+Corpus/U0081/U0081-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0081/U0081-IM-POS/3_th_1457565092.png,pessoal,,,pessoal/POS
+Corpus/U0081/U0081-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0082/U0082-IM-NEG/1_th_1457588329.png,pessoal,,,pessoal/NEG
+Corpus/U0082/U0082-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0083/U0083-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0083/U0083-IM-NEG/5.png,pessoal,,,pessoal/NEG
+Corpus/U0084/U0084-IM-NEG/2_th_1457618002.png,pessoal,,,pessoal/NEG
+Corpus/U0084/U0084-IM-NEG/5_th_1457618012.png,pessoal,,,pessoal/NEG
+Corpus/U0085/U0085-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0085/U0085-IM-NEG/2_th_1457618181.png,pessoal,,,pessoal/NEG
+Corpus/U0085/U0085-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0085/U0085-IM-POS/6.png,pessoal,,,pessoal/POS
+Corpus/U0085/U0085-IM-POS/6_th_1457618045.png,pessoal,,,pessoal/POS
+Corpus/U0086/U0086-IM-NEG/1_th_1457628913.png,pessoal,,,pessoal/NEG
+Corpus/U0086/U0086-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0086/U0086-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0086/U0086-IM-POS/3_th_1457628729.png,pessoal,,,pessoal/POS
+Corpus/U0086/U0086-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0087/U0087-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0087/U0087-IM-POS/5_th_1457697114.png,pessoal,,,pessoal/POS
+Corpus/U0088/U0088-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0088/U0088-IM-POS/4_th_1458127438.png,pessoal,,,pessoal/POS
+Corpus/U0089/U0089-IM-NEG/5_th_1458228976.png,pessoal,,,pessoal/NEG
+Corpus/U0090/U0090-IM-POS/1_th_1458238158.png,pessoal,,,pessoal/POS
+Corpus/U0090/U0090-IM-POS/4_th_1458238283.png,pessoal,,,pessoal/POS
+Corpus/U0090/U0090-IM-POS/5_th_1458238290.png,pessoal,,,pessoal/POS
+Corpus/U0091/U0091-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0091/U0091-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0091/U0091-IM-POS/3_th_1458239307.png,pessoal,,,pessoal/POS
+Corpus/U0092/U0092-IM-NEG/1.png,pessoal,,,pessoal/NEG
+Corpus/U0092/U0092-IM-NEG/2_th_1458249399.png,pessoal,,,pessoal/NEG
+Corpus/U0092/U0092-IM-NEG/3_th_1458249453.png,pessoal,,,pessoal/NEG
+Corpus/U0092/U0092-IM-NEG/4_th_1458249544.png,pessoal,,,pessoal/NEG
+Corpus/U0092/U0092-IM-NEG/5_th_1458249615.png,pessoal,,,pessoal/NEG
+Corpus/U0092/U0092-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0093/U0093-IM-NEG/1_th_1458249898.png,pessoal,,,pessoal/NEG
+Corpus/U0093/U0093-IM-NEG/2_th_1458249910.png,pessoal,,,pessoal/NEG
+Corpus/U0093/U0093-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0093/U0093-IM-POS/3_th_1458249604.png,pessoal,,,pessoal/POS
+Corpus/U0093/U0093-IM-POS/4_th_1458249627.png,pessoal,,,pessoal/POS
+Corpus/U0094/U0094-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0094/U0094-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0095/U0095-IM-NEG/1_th_1458257779.png,pessoal,,,pessoal/NEG
+Corpus/U0095/U0095-IM-NEG/3_th_1458257797.png,pessoal,,,pessoal/NEG
+Corpus/U0096/U0096-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0096/U0096-IM-NEG/4_th_1458259833.png,pessoal,,,pessoal/NEG
+Corpus/U0096/U0096-IM-POS/4_th_1458259412.png,pessoal,,,pessoal/POS
+Corpus/U0097/U0097-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0097/U0097-IM-POS/2_th_1458271041.png,pessoal,,,pessoal/POS
+Corpus/U0097/U0097-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0098/U0098-IM-NEG/1_th_1458343656.png,pessoal,,,pessoal/NEG
+Corpus/U0098/U0098-IM-NEG/3_th_1458343898.png,pessoal,,,pessoal/NEG
+Corpus/U0099/U0099-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0100/U0100-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0100/U0100-IM-POS/3_th_1458403415.png,pessoal,,,pessoal/POS
+Corpus/U0100/U0100-IM-POS/5_th_1458403499.png,pessoal,,,pessoal/POS
+Corpus/U0101/U0101-IM-NEG/4.png,pessoal,,,pessoal/NEG
+Corpus/U0101/U0101-IM-POS/1_th_1458481455.png,pessoal,,,pessoal/POS
+Corpus/U0101/U0101-IM-POS/2_th_1458481484.png,pessoal,,,pessoal/POS
+Corpus/U0101/U0101-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0101/U0101-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0102/U0102-IM-NEG/4_th_1458518890.png,pessoal,,,pessoal/NEG
+Corpus/U0102/U0102-IM-POS/2_th_1458517603.png,pessoal,,,pessoal/POS
+Corpus/U0102/U0102-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0103/U0103-IM-NEG/2_th_1458564634.png,pessoal,,,pessoal/NEG
+Corpus/U0103/U0103-IM-POS/4_th_1458564455.png,pessoal,,,pessoal/POS
+Corpus/U0103/U0103-IM-POS/5.png,pessoal,,,pessoal/POS
+Corpus/U0104/U0104-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0104/U0104-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0104/U0104-IM-NEG/4_th_1458607246.png,pessoal,,,pessoal/NEG
+Corpus/U0104/U0104-IM-POS/4_th_1458606991.png,pessoal,,,pessoal/POS
+Corpus/U0105/U0105-IM-NEG/1_th_1459008070.png,pessoal,,,pessoal/NEG
+Corpus/U0105/U0105-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0106/U0106-IM-POS/3_th_1459008396.png,pessoal,,,pessoal/POS
+Corpus/U0106/U0106-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0107/U0107-IM-NEG/5_th_1459010073.png,pessoal,,,pessoal/NEG
+Corpus/U0107/U0107-IM-POS/4_th_1459009728.png,pessoal,,,pessoal/POS
+Corpus/U0108/U0108-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0108/U0108-IM-POS/5_th_1459010398.png,pessoal,,,pessoal/POS
+Corpus/U0109/U0109-IM-NEG/2_th_1459012170.png,pessoal,,,pessoal/NEG
+Corpus/U0109/U0109-IM-NEG/4_th_1459012329.png,pessoal,,,pessoal/NEG
+Corpus/U0109/U0109-IM-POS/1_th_1459011849.png,pessoal,,,pessoal/POS
+Corpus/U0110/U0110-IM-POS/1.png,pessoal,,,pessoal/POS
+Corpus/U0110/U0110-IM-POS/2_th_1459019151.png,pessoal,,,pessoal/POS
+Corpus/U0110/U0110-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0111/U0111-IM-POS/4.png,pessoal,,,pessoal/POS
+Corpus/U0111/U0111-IM-POS/5_th_1459029847.png,pessoal,,,pessoal/POS
+Corpus/U0113/U0113-IM-POS/5_th_1459054093.png,pessoal,,,pessoal/POS
+Corpus/U0114/U0114-IM-NEG/3_th_1459037534.png,pessoal,,,pessoal/NEG
+Corpus/U0114/U0114-IM-POS/1_th_1459036738.png,pessoal,,,pessoal/POS
+Corpus/U0114/U0114-IM-POS/5_th_1459037148.png,pessoal,,,pessoal/POS
+Corpus/U0115/U0115-IM-NEG/4_th_1459066364.png,pessoal,,,pessoal/NEG
+Corpus/U0115/U0115-IM-POS/5_th_1459065879.png,pessoal,,,pessoal/POS
+Corpus/U0116/U0116-IM-POS/3_th_1459067264.png,pessoal,,,pessoal/POS
+Corpus/U0117/U0117-IM-NEG/2_th_1459137403.png,pessoal,,,pessoal/NEG
+Corpus/U0117/U0117-IM-POS/3_th_1459135565.png,pessoal,,,pessoal/POS
+Corpus/U0118/U0118-IM-NEG/2_th_1459151531.png,pessoal,,,pessoal/NEG
+Corpus/U0118/U0118-IM-POS/3.png,pessoal,,,pessoal/POS
+Corpus/U0119/U0119-IM-NEG/5_th_1459204017.png,pessoal,,,pessoal/NEG
+Corpus/U0119/U0119-IM-POS/2.png,pessoal,,,pessoal/POS
+Corpus/U0120/U0120-IM-NEG/1_th_1459275627.png,pessoal,,,pessoal/NEG
+Corpus/U0120/U0120-IM-NEG/2.png,pessoal,,,pessoal/NEG
+Corpus/U0120/U0120-IM-NEG/2_th_1459275679.png,pessoal,,,pessoal/NEG
+Corpus/U0120/U0120-IM-NEG/3.png,pessoal,,,pessoal/NEG
+Corpus/U0120/U0120-IM-NEG/3_th_1459275773.png,pessoal,,,pessoal/NEG
+Corpus/U0120/U0120-IM-POS/2.png,pessoal,,,pessoal/POS

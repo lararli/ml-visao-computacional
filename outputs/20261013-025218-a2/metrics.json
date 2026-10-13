@@ -1,0 +1,20 @@
+{
+  "n_sample": 600,
+  "n_embedded": 600,
+  "embeddings_new": 0,
+  "embeddings_reused": 600,
+  "unreadable": 0,
+  "threshold": 0.2503523528575897,
+  "threshold_accuracy": 0.76,
+  "n_descriptions": 24,
+  "top5": [
+    "a website screenshot",
+    "text and logo",
+    "food product",
+    "a video game",
+    "a pet animal"
+  ],
+  "n_queries": 10,
+  "zero_shot_top1": 0.5481727574750831,
+  "seconds": 6.1
+}
