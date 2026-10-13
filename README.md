@@ -65,6 +65,8 @@ dados, reaproveita esses resultados e publica a gold; `make pipeline FORCE=1` tr
 | `make data` | baixa, verifica o sha256, extrai e grava `outputs/<run_id>/manifest.json`; depois monta a A1 |
 | `make pipeline` | por dataset: treino e avaliação (só o que falta em `outputs/`) e a gold no `catalog.duckdb`; `ONLY=<dataset>` roda um só |
 | `make gold` | só publica a gold dos 4 datasets a partir de `outputs/` |
+| `make query` | roda as consultas de exemplo nas tabelas gold (uma pergunta de negócio por dataset) |
+| `make sql Q="SELECT ..."` | roda qualquer consulta na gold, só para leitura |
 | `make clean` | apaga `outputs/`, `interim/`, `processed/` e caches; nunca `data.nosync/raw/` |
 
 Prova (depois de `make data`): `make ci && uv run pytest -q tests/test_dados_kaggle.py`.

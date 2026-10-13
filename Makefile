@@ -6,11 +6,11 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 export PYTHONDONTWRITEBYTECODE := 1
 RUN := $(UV) run --frozen
 
-.PHONY: help setup lint format test smoke ci data pipeline gold run run-a1-scratch \
+.PHONY: help setup lint format test smoke ci data pipeline gold query sql run run-a1-scratch \
         run-a1-pretrained run-a2 run-a3 run-a4 all clean
 
 help:
-	@echo "setup lint test smoke ci data pipeline gold all clean"
+	@echo "setup lint test smoke ci data pipeline gold query sql all clean"
 	@echo "um dataset só: make pipeline ONLY=austin_houses (ou ads16, images, chest_xray); treinar de novo: FORCE=1"
 
 setup:  ## cria .venv.nosync e instala as dependências do uv.lock
@@ -44,6 +44,13 @@ pipeline:  ## por dataset: silver -> treino -> avaliação -> gold (treina só o
 
 gold:  ## só publica a gold dos 4 datasets a partir de outputs/ (não treina)
 	$(RUN) python scripts/run_pipeline.py --gold-only
+
+query:  ## consultas de exemplo nas tabelas gold dos 4 datasets
+	$(RUN) python scripts/consultas.py
+
+Q ?=
+sql:  ## uma consulta qualquer na gold, só leitura: make sql Q="SELECT * FROM gold.model_run"
+	$(RUN) python scripts/consultas.py --sql "$(Q)"
 
 run: pipeline  ## nome antigo do pipeline
 
