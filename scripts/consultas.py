@@ -35,7 +35,8 @@ CONSULTAS = {
     "A2: objetos mais presentes nos anúncios (gold.ads16_ad_object)": """
         SELECT description AS objeto, count(*) FILTER (WHERE present) AS imagens_com_o_objeto,
                round(avg(score), 3) AS score_medio
-        FROM gold.ads16_ad_object GROUP BY description ORDER BY imagens_com_o_objeto DESC LIMIT 8""",
+        FROM gold.ads16_ad_object GROUP BY description
+        ORDER BY imagens_com_o_objeto DESC LIMIT 8""",
     "A3: acerto por classe e os erros (gold.images_prediction)": """
         SELECT true_class AS classe, count(*) AS imagens, round(avg(correct::INT), 3) AS acerto,
                string_agg(CASE WHEN NOT correct THEN pred_class END, ', ') AS previsto_nos_erros
